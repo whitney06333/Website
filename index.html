@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitney Ops | Operations & Growth Partner</title>
+<meta name="description" content="Virtual assistant services for coaches, speakers, founders, and real estate professionals — flat monthly retainers, no hourly tracking. Whitney Ops keeps your business running so you can grow.">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<meta property="og:title" content="Whitney Ops | Operations & Growth Partner">
+<meta property="og:description" content="Virtual assistant services for coaches, speakers, founders, and real estate professionals — flat monthly retainers, no hourly tracking.">
+<meta property="og:image" content="images/og-image.svg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--lilac:#9B8EC4;--lilac-deep:#7B6FA8;--lilac-light:#C8BFDF;--lilac-pale:#EDE9F5;--lilac-wash:#F8F6FC;--plum:#5C4F82;--dark:#1E1B2E;--mid:#6B6580;--soft:#9994A8;--white:#FFFFFF;--off-white:#FDFCFE;--border:#E8E4F0;--success:#6BBF7B;--fd:'Playfair Display',Georgia,serif;--fb:'Outfit',sans-serif;--ease:cubic-bezier(0.4,0,0.2,1)}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--dark);line-height:1.6;background:var(--off-white);-webkit-font-smoothing:antialiased}
+.site{max-width:100%;overflow-x:hidden}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5%;background:rgba(253,252,254,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none}
+.logo svg{transition:transform 0.3s var(--ease)}
+.logo:hover svg{transform:rotate(-5deg) scale(1.05)}
+.logo-text{font-family:var(--fd);font-size:18px;font-weight:600;color:var(--plum)}
+.logo-sub{font-family:var(--fb);font-size:10px;color:var(--lilac);letter-spacing:2px;text-transform:uppercase;font-weight:500;margin-top:-2px}
+.nl{display:flex;gap:24px;align-items:center}
+.nl a{text-decoration:none;color:var(--mid);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s;position:relative}
+.nl a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--lilac);transition:width 0.3s var(--ease);border-radius:2px}
+.nl a:hover,.nl a.active{color:var(--plum)}
+.nl a:hover::after,.nl a.active::after{width:100%}
+.ncta{background:var(--lilac)!important;color:var(--white)!important;padding:10px 24px;border-radius:50px;box-shadow:0 2px 12px rgba(155,142,196,0.3)}
+.ncta::after{display:none!important}
+.ncta:hover{background:var(--lilac-deep)!important;transform:translateY(-1px);box-shadow:0 4px 20px rgba(155,142,196,0.4)}
+
+/* PAGES */
+.pg{display:none;animation:fu 0.5s var(--ease)}.pg.active{display:block}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.3s var(--ease);border:none;font-family:var(--fb)}
+.bp{background:var(--lilac);color:var(--white);box-shadow:0 2px 16px rgba(155,142,196,0.3)}
+.bp:hover{background:var(--lilac-deep);transform:translateY(-2px);box-shadow:0 6px 24px rgba(155,142,196,0.4)}
+.bg{background:transparent;color:var(--plum);border:1.5px solid var(--border)}
+.bg:hover{border-color:var(--lilac);background:var(--lilac-pale)}
+.bw{background:var(--white);color:var(--plum);box-shadow:0 2px 12px rgba(0,0,0,0.1)}
+.bw:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.15)}
+
+/* SECTIONS */
+.s{padding:80px 8%}.sa{background:var(--white)}.sl{background:var(--lilac-wash)}.sd{background:var(--dark);color:var(--white)}
+.sh{text-align:center;max-width:620px;margin:0 auto 48px}
+.sh .ey{font-size:12px;color:var(--lilac);letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.sh h2{font-family:var(--fd);font-size:36px;font-weight:500;color:var(--dark);letter-spacing:-0.3px;margin-bottom:16px}
+.sd .sh h2{color:var(--white)}
+.sh p{font-size:15px;color:var(--mid);line-height:1.8}
+.sd .sh p{color:rgba(255,255,255,0.7)}
+
+/* HERO */
+.hero{display:flex;align-items:center;justify-content:space-between;padding:80px 8% 60px;gap:60px;min-height:75vh;position:relative}
+.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(155,142,196,0.08) 0%,transparent 70%);pointer-events:none}
+.ht{flex:1;max-width:580px}
+.ht .ey{font-size:12px;color:var(--lilac);letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.ht .ey span{width:24px;height:1px;background:var(--lilac)}
+.ht h1{font-family:var(--fd);font-size:50px;font-weight:500;color:var(--dark);line-height:1.15;margin-bottom:20px;letter-spacing:-0.5px}
+.ht h1 em{color:var(--lilac);font-style:italic}
+.ht p{font-size:16px;color:var(--mid);line-height:1.8;margin-bottom:32px}
+.hv{flex:0 0 400px;height:480px;position:relative}
+.hc{background:var(--white);border-radius:20px;padding:24px;border:1px solid var(--border);box-shadow:0 8px 40px rgba(30,27,46,0.06);position:absolute;transition:all 0.4s var(--ease)}
+.hc:hover{transform:translateY(-4px);box-shadow:0 12px 48px rgba(155,142,196,0.15)}
+.hc1{top:0;left:20px;right:20px}.hc2{top:160px;left:0;right:40px}.hc3{top:300px;left:40px;right:0}.hc4{top:420px;left:10px;right:50px}
+.hcl{font-size:10px;color:var(--lilac);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.hcv{font-family:var(--fd);font-size:24px;color:var(--dark);font-weight:500}
+.hcs{font-size:12px;color:var(--soft);margin-top:3px}
+.hcb{height:4px;background:var(--lilac-pale);border-radius:4px;margin-top:10px;overflow:hidden}
+.hcf{height:100%;background:linear-gradient(90deg,var(--lilac),var(--lilac-deep));border-radius:4px;animation:shimmer 2s infinite;background-size:200% 100%}
+
+/* PAIN */
+.pl{max-width:560px;margin:0 auto}
+.pi{display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);transition:all 0.3s var(--ease)}
+.pi:hover{padding-left:8px}.pi:last-child{border:none}
+.pic{width:28px;height:28px;background:var(--lilac-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;color:var(--lilac);margin-top:2px}
+.pit{font-size:15px;color:var(--mid);line-height:1.6}
+.pr{text-align:center;margin-top:40px;padding:32px;background:linear-gradient(135deg,var(--lilac-pale),var(--lilac-wash));border-radius:16px}
+.pr p{font-size:15px;color:var(--mid);margin-bottom:8px}
+.pr strong{font-size:16px;color:var(--plum);line-height:1.6}
+
+/* PLAN CARDS */
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px;margin:0 auto}
+.sc{background:var(--white);border-radius:20px;border:1.5px solid var(--border);overflow:hidden;transition:all 0.4s var(--ease);cursor:pointer;position:relative}
+.sc:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(155,142,196,0.15);border-color:var(--lilac-light)}
+.sc.feat{border-color:var(--lilac);box-shadow:0 8px 32px rgba(155,142,196,0.12)}
+.sc.feat:hover{box-shadow:0 20px 60px rgba(155,142,196,0.25)}
+.sbdg{position:absolute;top:16px;right:16px;background:var(--lilac);color:var(--white);font-size:10px;font-weight:600;padding:4px 12px;border-radius:50px;letter-spacing:0.5px}
+.sic{height:70px;display:flex;align-items:center;justify-content:center;font-size:32px;color:var(--lilac);padding-top:24px}
+.stp{padding:0 28px 16px;text-align:center}
+.stp h3{font-family:var(--fd);font-size:22px;font-weight:500;color:var(--dark);margin-bottom:4px}
+.stp .desc{font-size:13px;color:var(--soft);line-height:1.5;margin-bottom:12px;font-style:italic}
+.plan-price-block{text-align:center;padding:0 24px 8px}
+.plan-amount{font-family:var(--fd);font-size:36px;font-weight:600;color:var(--plum);line-height:1}
+.plan-period{font-size:13px;color:var(--soft);margin-bottom:4px}
+.plan-vs{font-size:11px;color:var(--success);font-weight:500;background:#f0faf4;padding:3px 10px;border-radius:50px;display:inline-block;margin-bottom:12px}
+.plan-features{padding:0 20px 16px;list-style:none}
+.plan-features li{font-size:13px;color:var(--mid);padding:5px 0;border-bottom:1px solid var(--lilac-pale);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.plan-features li:last-child{border-bottom:none}
+.plan-features li::before{content:'→';color:var(--lilac);flex-shrink:0;font-size:12px;margin-top:1px}
+.sftr{padding:0 24px 24px}
+.sbtn{display:block;text-align:center;padding:12px;border-radius:50px;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.3s var(--ease);font-family:var(--fb);border:1.5px solid var(--border);color:var(--plum);background:transparent;text-decoration:none}
+.sbtn:hover{background:var(--lilac-pale);border-color:var(--lilac)}
+.sc.feat .sbtn{background:var(--lilac);color:var(--white);border-color:var(--lilac)}
+.sc.feat .sbtn:hover{background:var(--lilac-deep)}
+
+/* CUSTOM CARD */
+.cc{background:linear-gradient(135deg,var(--lilac-pale),var(--lilac-wash));border-radius:20px;padding:40px;text-align:center;max-width:960px;margin:32px auto 0;border:1px solid var(--border)}
+.cc h3{font-family:var(--fd);font-size:24px;color:var(--plum);margin-bottom:8px}
+.cc p{font-size:14px;color:var(--mid);margin-bottom:20px;line-height:1.6}
+
+/* PROOF */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:800px;margin:0 auto}
+.pitem{text-align:center;padding:24px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;transition:all 0.3s var(--ease)}
+.pitem:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px)}
+.pn{font-family:var(--fd);font-size:32px;color:var(--lilac-light);font-weight:500;margin-bottom:4px}
+.pd{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5}
+
+/* TESTIMONIALS */
+.tgrid{max-width:800px;margin:0 auto}
+.tc{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px;margin-bottom:20px;transition:all 0.3s var(--ease)}
+.tc:hover{box-shadow:0 8px 32px rgba(155,142,196,0.1);transform:translateY(-2px)}
+.tq{font-size:40px;color:var(--lilac-light);font-family:var(--fd);line-height:1;margin-bottom:12px}
+.tt{font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:16px;font-style:italic}
+.ta{display:flex;align-items:center;gap:12px}
+.tav{width:44px;height:44px;border-radius:50%;background:var(--lilac-pale);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;color:var(--lilac)}
+.tn{font-size:14px;font-weight:500;color:var(--dark)}
+.tr{font-size:12px;color:var(--soft)}
+
+/* WHO */
+.wg{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.wi{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--dark);padding:12px 16px;background:var(--white);border-radius:12px;border:1px solid var(--border);transition:all 0.3s var(--ease)}
+.wi:hover{border-color:var(--lilac-light);box-shadow:0 4px 16px rgba(155,142,196,0.08);transform:translateX(4px)}
+.wc{width:24px;height:24px;background:var(--lilac-pale);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--lilac);font-size:13px;font-weight:600;flex-shrink:0}
+
+/* NICHES */
+.niche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:840px;margin:0 auto}
+.niche-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all 0.3s var(--ease)}
+.niche-card:hover{border-color:var(--lilac-light);box-shadow:0 8px 32px rgba(155,142,196,0.1);transform:translateY(-2px)}
+.niche-icon{font-family:var(--fd);font-size:28px;color:var(--lilac);font-style:italic;margin-bottom:10px}
+.niche-title{font-family:var(--fd);font-size:17px;font-weight:500;color:var(--dark);margin-bottom:8px}
+.niche-pain{font-size:12px;color:var(--soft);font-style:italic;line-height:1.6;border-left:2px solid var(--lilac-light);padding-left:10px;margin-bottom:12px}
+.niche-tags{display:flex;flex-wrap:wrap;gap:5px}
+.niche-tag{font-size:11px;padding:2px 9px;background:var(--lilac-pale);border-radius:50px;color:var(--plum)}
+
+/* STEPS */
+.stg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:840px;margin:0 auto}
+.sti{text-align:center;padding:28px 16px}
+.stn{width:48px;height:48px;border-radius:50%;background:var(--lilac-pale);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:20px;color:var(--lilac);margin:0 auto 16px;transition:all 0.3s var(--ease)}
+.sti:hover .stn{background:var(--lilac);color:var(--white);transform:scale(1.1)}
+.stt{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:6px}
+.std{font-size:12px;color:var(--soft);line-height:1.5}
+
+/* CTA */
+.cta{text-align:center;padding:80px 8%;background:linear-gradient(135deg,var(--plum),var(--lilac));color:var(--white);position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(255,255,255,0.05) 0%,transparent 50%);pointer-events:none}
+.cta h2{font-family:var(--fd);font-size:32px;font-weight:400;font-style:italic;margin-bottom:16px;position:relative}
+.cta p{font-size:15px;opacity:0.85;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.8;position:relative}
+
+/* PACKAGE DETAIL */
+.pkd{max-width:720px;margin:0 auto}
+.pkb{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--lilac);cursor:pointer;margin-bottom:20px;font-weight:500;text-decoration:none;transition:all 0.2s}
+.pkb:hover{color:var(--plum)}
+.pkh{text-align:center;padding:32px 0 40px}
+.pkh h1{font-family:var(--fd);font-size:42px;font-weight:500;letter-spacing:-0.3px}
+.pkh .desc{font-size:15px;color:var(--mid);font-style:italic;max-width:480px;margin:12px auto 0;line-height:1.7}
+.pkh .price-big{font-family:var(--fd);font-size:52px;font-weight:600;color:var(--plum);line-height:1;margin:20px 0 4px}
+.pkh .price-period{font-size:15px;color:var(--soft)}
+.pkh .price-vs{font-size:13px;color:var(--success);font-weight:500;margin-top:6px}
+.pkdi{padding:24px 0;border-bottom:1px solid var(--border)}
+.pkdi h3{font-family:var(--fd);font-size:20px;color:var(--plum);margin-bottom:8px}
+.pkdi p{font-size:14px;color:var(--mid);line-height:1.8}
+.pkinc{background:linear-gradient(135deg,var(--lilac-pale),var(--lilac-wash));padding:16px 24px;border-radius:12px;margin-bottom:8px;font-size:14px;color:var(--plum);font-weight:600}
+
+/* ABOUT */
+.abh{display:flex;gap:60px;align-items:flex-start;padding:60px 8%}
+.abi{flex:0 0 340px;height:420px;border-radius:20px;overflow:hidden;position:relative}
+.abi img{width:100%;height:100%;object-fit:cover;border-radius:20px;display:block}
+.abi-placeholder{width:100%;height:100%;background:var(--lilac-pale);display:flex;align-items:center;justify-content:center}
+.abit{font-family:var(--fd);color:var(--lilac);font-size:15px;font-style:italic;text-align:center;padding:20px}
+.abt{flex:1}
+.abt h1{font-family:var(--fd);font-size:42px;font-weight:500;margin-bottom:8px}
+.abt .tag{font-family:var(--fd);font-size:18px;color:var(--lilac);font-style:italic;margin-bottom:28px}
+.abt p{font-size:15px;color:var(--mid);line-height:1.9;margin-bottom:16px}
+.syg{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:720px;margin:0 auto}
+.syc{padding:28px;border:1px solid var(--border);border-radius:16px;background:var(--white);transition:all 0.3s var(--ease)}
+.syc:hover{border-color:var(--lilac-light);box-shadow:0 8px 32px rgba(155,142,196,0.1);transform:translateY(-2px)}
+.syc h3{font-family:var(--fd);font-size:18px;color:var(--plum);margin-bottom:10px}
+.syc p{font-size:13px;color:var(--mid);line-height:1.7}
+.tw{text-align:center;max-width:600px;margin:0 auto}
+.ttag{display:inline-block;padding:6px 16px;margin:4px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:13px;color:var(--mid);transition:all 0.2s var(--ease)}
+.ttag:hover{border-color:var(--lilac);color:var(--plum);background:var(--lilac-pale)}
+
+/* CONTACT */
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:860px;margin:0 auto}
+.ccard{padding:36px;background:var(--white);border-radius:20px;border:1px solid var(--border)}
+.ccard h2{font-family:var(--fd);font-size:24px;margin-bottom:8px;color:var(--dark)}
+.ccard p{font-size:14px;color:var(--mid);margin-bottom:20px;line-height:1.7}
+.fi{width:100%;padding:14px 18px;border:1.5px solid var(--border);border-radius:12px;font-size:14px;font-family:var(--fb);margin-bottom:12px;background:var(--off-white);transition:all 0.2s var(--ease);outline:none}
+.fi:focus{border-color:var(--lilac);box-shadow:0 0 0 3px rgba(155,142,196,0.15)}
+.ii{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+.iic{width:40px;height:40px;background:var(--lilac-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--lilac);font-size:15px;font-weight:600}
+.iit{font-size:14px;color:var(--mid);line-height:1.5}
+.iit strong{color:var(--dark);display:block;margin-bottom:2px;font-weight:500}
+
+/* RESOURCES */
+.rg{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:640px;margin:0 auto}
+.rc{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px;text-align:center;transition:all 0.4s var(--ease)}
+.rc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(155,142,196,0.12);border-color:var(--lilac-light)}
+.ric{width:56px;height:56px;background:var(--lilac-pale);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--lilac);font-size:22px;transition:all 0.3s var(--ease)}
+.rc:hover .ric{background:var(--lilac);color:var(--white)}
+.ric img{width:28px;height:28px;display:block}
+.rc h3{font-family:var(--fd);font-size:20px;color:var(--dark);margin-bottom:8px}
+.rc p{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:20px}
+
+/* FAQ */
+.fq{padding:20px 0;border-bottom:1px solid var(--border)}
+.fqq{font-weight:600;font-size:15px;color:var(--dark);margin-bottom:8px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.fqa{font-size:14px;color:var(--mid);line-height:1.7}
+
+/* CALENDLY */
+.calp{background:var(--lilac-wash);border:2px dashed var(--border);border-radius:16px;padding:40px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--lilac);font-family:var(--fd);font-style:italic;font-size:15px;gap:12px;text-align:center}
+.calp a.btn{font-style:normal}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-align:center}
+.fl{font-family:var(--fd);font-size:22px;color:var(--white);margin-bottom:4px;font-weight:500}
+.fs{font-size:12px;color:var(--lilac-light);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
+.fln{font-size:13px;margin-bottom:8px}
+.fc{font-size:11px;opacity:0.4;margin-top:12px}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero{flex-direction:column;padding:40px 6%;min-height:auto}
+.hv{display:none}
+.ht h1{font-size:36px}
+.nl a:not(.ncta){display:none}
+.sg{grid-template-columns:1fr}
+.pgrid{grid-template-columns:repeat(2,1fr)}
+.stg{grid-template-columns:repeat(2,1fr)}
+.abh{flex-direction:column;padding:40px 6%}
+.abi{flex:none;width:100%;height:280px}
+.cg{grid-template-columns:1fr}
+.syg,.rg{grid-template-columns:1fr}
+.s{padding:60px 6%}
+.niche-grid{grid-template-columns:1fr}
+[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}
+}
+</style>
+</head>
+<body>
+<div class="site">
+
+<nav>
+<a class="logo" onclick="go('home')">
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect width="34" height="34" rx="10" fill="#9B8EC4"/><path d="M9 24L13.5 10h2.2l3 9.5L21.8 10H24l-5.5 14h-2L13 14.5 9.5 24H9z" fill="#fff" opacity="0.95"/><circle cx="27" cy="11" r="2.5" fill="#C8BFDF"/></svg>
+<div><div class="logo-text">Whitney Ops</div><div class="logo-sub">Operations &amp; growth</div></div>
+</a>
+<div class="nl">
+<a onclick="go('home')" class="active" id="n0">Home</a>
+<a onclick="go('services')" id="n1">Services</a>
+<a onclick="go('about')" id="n2">About</a>
+<a onclick="go('resources')" id="n3">Resources</a>
+<a onclick="go('contact')" id="n4">Contact</a>
+<a class="ncta" onclick="go('contact')">Book a call</a>
+</div>
+</nav>
+
+<!-- ========== HOME ========== -->
+<div id="home" class="pg active">
+
+<div class="hero">
+<div class="ht">
+<div class="ey"><span></span>Operations &amp; Growth Partner</div>
+<h1>Your business runs.<br>You <em>grow.</em></h1>
+<p>Virtual assistant and operations support for coaches, speakers, founders, and real estate professionals &mdash; flat monthly retainers, no hourly tracking, no surprises. Based in Nairobi, Kenya. Serving clients in the US, UK, Canada, and Australia.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<span class="btn bp" onclick="go('contact')">Book a free call &rarr;</span>
+<span class="btn bg" onclick="go('services')">View services</span>
+</div>
+</div>
+<div class="hv">
+<div class="hc hc1"><div class="hcl">Inbox &amp; admin</div><div class="hcv">Inbox zero</div><div class="hcs">Managed daily &mdash; nothing missed, nothing buried</div></div>
+<div class="hc hc2"><div class="hcl">Content &amp; social</div><div class="hcv">21 posts/week</div><div class="hcs">Consistent visibility without you thinking about it</div><div class="hcb"><div class="hcf" style="width:100%"></div></div></div>
+<div class="hc hc3"><div class="hcl">Lead generation</div><div class="hcv">Pipeline full</div><div class="hcs">Outreach and follow-up while you focus on clients</div><div class="hcb"><div class="hcf" style="width:88%"></div></div></div>
+<div class="hc hc4"><div class="hcl">Time given back</div><div class="hcv">20+ hrs/week</div><div class="hcs">Returned to you for the work that actually grows revenue</div></div>
+</div>
+</div>
+
+<div class="s sl">
+<div class="sh"><div class="ey">Sound familiar?</div><h2>You're great at what you do. But the business around it is chaos.</h2></div>
+<div class="pl">
+<div class="pi"><div class="pic">&rarr;</div><div class="pit">Your inbox is a disaster &mdash; important emails get buried and leads go cold.</div></div>
+<div class="pi"><div class="pic">&rarr;</div><div class="pit">Content is inconsistent &mdash; you post when you remember, which isn't often enough.</div></div>
+<div class="pi"><div class="pic">&rarr;</div><div class="pit">Your pipeline dries up every time you get busy with clients.</div></div>
+<div class="pi"><div class="pic">&rarr;</div><div class="pit">You spend evenings on admin instead of growing the business.</div></div>
+<div class="pi"><div class="pic">&rarr;</div><div class="pit">Everything lives in your head &mdash; there's no system backing you up.</div></div>
+<div class="pi"><div class="pic">&rarr;</div><div class="pit">You know you need help but aren't sure where to start or what to delegate.</div></div>
+</div>
+<div class="pr"><p>You don't need to do it all yourself.</p><strong>You need someone steady in the background keeping things running while you focus on your clients.</strong></div>
+</div>
+
+<!-- SERVICES OVERVIEW -->
+<div class="s">
+<div class="sh"><div class="ey">Service plans</div><h2>Choose your level of support</h2><p>Three flat monthly retainers. No hourly tracking. No surprise invoices. Cancel anytime with 14 days notice.</p></div>
+<div class="sg">
+
+<div class="sc" onclick="go('pk1')">
+<div class="sic">&#9744;</div>
+<div class="stp"><h3>Relief</h3><div class="desc">"Take the weight off my desk"</div></div>
+<div class="plan-price-block">
+<div class="plan-amount">$500</div>
+<div class="plan-period">/month flat retainer</div>
+<div class="plan-vs">Local hire equivalent: $3,000–$5,000/mo</div>
+</div>
+<ul class="plan-features">
+<li>Inbox management &amp; triage</li>
+<li>Calendar &amp; scheduling</li>
+<li>CRM updates &amp; data entry</li>
+<li>Document prep &amp; filing</li>
+<li>Weekly summary report</li>
+<li>Travel &amp; logistics support</li>
+</ul>
+<div class="sftr"><span class="sbtn">View details &rarr;</span></div>
+</div>
+
+<div class="sc feat" onclick="go('pk2')">
+<div class="sbdg">Most popular</div>
+<div class="sic">&#9733;</div>
+<div class="stp"><h3>Growth</h3><div class="desc">"Run my ops so I can make money"</div></div>
+<div class="plan-price-block">
+<div class="plan-amount">$650</div>
+<div class="plan-period">/month flat retainer</div>
+<div class="plan-vs">Local hire equivalent: $3,500–$5,500/mo</div>
+</div>
+<ul class="plan-features">
+<li>Everything in Relief, plus&hellip;</li>
+<li>Content creation &amp; scheduling</li>
+<li>Lead generation &amp; outreach support</li>
+<li>Email marketing &amp; newsletters</li>
+<li>Pipeline tracking &amp; follow-up</li>
+<li>Launch &amp; event support</li>
+</ul>
+<div class="sftr"><span class="sbtn">View details &rarr;</span></div>
+</div>
+
+<div class="sc" onclick="go('pk3')">
+<div class="sic">&#10070;</div>
+<div class="stp"><h3>Operator</h3><div class="desc">"Be my right hand. Own it."</div></div>
+<div class="plan-price-block">
+<div class="plan-amount">$900</div>
+<div class="plan-period">/month flat retainer</div>
+<div class="plan-vs">Local hire equivalent: $5,000–$7,000/mo</div>
+</div>
+<ul class="plan-features">
+<li>Everything in Growth, plus&hellip;</li>
+<li>Full outreach campaign management</li>
+<li>SOP creation &amp; documentation</li>
+<li>Team &amp; vendor coordination</li>
+<li>Business reporting &amp; dashboards</li>
+<li>Monthly strategy review call</li>
+</ul>
+<div class="sftr"><span class="sbtn">View details &rarr;</span></div>
+</div>
+
+</div>
+<div class="cc"><h3>Not sure which plan fits?</h3><p>Book a free call and we'll figure it out together. All plans are flexible &mdash; scope adjusts as your business evolves.</p><span class="btn bp" onclick="go('contact')">Book a discovery call &rarr;</span></div>
+</div>
+
+<!-- PROOF STATS -->
+<div class="s sd">
+<div class="sh"><div class="ey" style="color:#C8BFDF">Why Whitney Ops</div><h2>Real numbers. Real work.</h2></div>
+<div class="pgrid">
+<div class="pitem"><div class="pn">20+</div><div class="pd">Hours per week given back to clients</div></div>
+<div class="pitem"><div class="pn">Daily</div><div class="pd">Inbox and pipeline management &mdash; nothing missed</div></div>
+<div class="pitem"><div class="pn">6&times;</div><div class="pd">Less than the cost of a local hire in the US or UK</div></div>
+<div class="pitem"><div class="pn">48 hrs</div><div class="pd">From signing to fully onboarded and working</div></div>
+</div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="s sa">
+<div class="sh"><div class="ey">Client words</div><h2>What clients say</h2></div>
+<div class="tgrid">
+<div class="tc">
+<div class="tq">&ldquo;</div>
+<div class="tt">Whitney consistently delivers outstanding results as a vital member of our team. Her dependability is unmatched; she meets every deadline while upholding the highest quality standards. What truly distinguishes Whitney is her &ldquo;can do&rdquo; attitude and problem-solving approach. Whitney blends technical skills with genuine care for her work, making her an invaluable team member. Her proactive communication and meticulous attention to detail give me full confidence in assigning her important projects. I recommend Whitney without hesitation.</div>
+<div class="ta">
+<div class="tav">L</div>
+<div>
+<div class="tn">Liz Goodgold</div>
+<div class="tr">Brand &amp; Growth Strategist &middot; Keynote Speaker &middot; Speech Coach</div>
+</div>
+</div>
+</div>
+<div class="tc">
+<div class="tq">&ldquo;</div>
+<div class="tt">Whitney completely transformed how my business operates. My pipeline stays full, content goes out consistently, and I haven't missed a single follow-up since she started. She's not just a VA &mdash; she's the reason my business runs the way it should.</div>
+<div class="ta">
+<div class="tav">R</div>
+<div>
+<div class="tn">Ryan</div>
+<div class="tr">Agency Owner &mdash; Lead Generation &amp; Outreach</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- WHO THIS IS FOR - NICHES -->
+<div class="s sl">
+<div class="sh"><div class="ey">Who I work with</div><h2>Built for the people who build things</h2><p>Coaches, speakers, founders, and real estate professionals &mdash; brilliant at what they do, running out of hours to do it.</p></div>
+<div class="niche-grid">
+<div class="niche-card">
+<div class="niche-icon">01</div>
+<div class="niche-title">Coaches, Speakers &amp; Authors</div>
+<div class="niche-pain">"I became a coach to help people &mdash; not to spend all day in my inbox."</div>
+<div class="niche-tags">
+<span class="niche-tag">Inbox management</span><span class="niche-tag">Content creation</span><span class="niche-tag">Client onboarding</span><span class="niche-tag">Launch support</span><span class="niche-tag">Community management</span>
+</div>
+</div>
+<div class="niche-card">
+<div class="niche-icon">02</div>
+<div class="niche-title">Founders &amp; Business Owners</div>
+<div class="niche-pain">"The business is growing. The to-do list is growing faster."</div>
+<div class="niche-tags">
+<span class="niche-tag">Lead generation</span><span class="niche-tag">Pipeline management</span><span class="niche-tag">Outreach campaigns</span><span class="niche-tag">SOP creation</span><span class="niche-tag">Reporting</span>
+</div>
+</div>
+<div class="niche-card">
+<div class="niche-icon">03</div>
+<div class="niche-title">Real Estate Professionals</div>
+<div class="niche-pain">"Every hour behind a screen is a deal I'm not closing."</div>
+<div class="niche-tags">
+<span class="niche-tag">CRM management</span><span class="niche-tag">Lead follow-up</span><span class="niche-tag">Listing admin</span><span class="niche-tag">Social media</span><span class="niche-tag">Client comms</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PROCESS -->
+<div class="s">
+<div class="sh"><div class="ey">Process</div><h2>From hello to running &mdash; in 48 hours</h2></div>
+<div class="stg">
+<div class="sti"><div class="stn">1</div><div class="stt">Free discovery call</div><div class="std">20 minutes. We talk about your business, what's heavy, and whether we're a good fit.</div></div>
+<div class="sti"><div class="stn">2</div><div class="stt">Sign &amp; pay</div><div class="std">Choose a plan, sign the agreement, pay the first month. No minimum contract. Cancel anytime.</div></div>
+<div class="sti"><div class="stn">3</div><div class="stt">Onboarding call</div><div class="std">30 minutes together. Confirm priorities, agree communication style, get access to your tools.</div></div>
+<div class="sti"><div class="stn">4</div><div class="stt">Work begins</div><div class="std">Within 48 hours I'm in your inbox, your calendar, your systems &mdash; and you're free to focus.</div></div>
+</div>
+</div>
+
+<div class="cta"><h2>If things feel heavy right now, we can start there.</h2><p>Book a free 20-minute call. No pitch. No pressure. Just a conversation about what support could look like for your business.</p><span class="btn bw" onclick="go('contact')">Book a free call &rarr;</span></div>
+</div>
+
+<!-- ========== SERVICES ========== -->
+<div id="services" class="pg">
+<div class="s">
+<div class="sh"><div class="ey">Services</div><h2>Three plans. One reliable partner.</h2><p>Flat monthly retainers designed around what your business actually needs. No hourly tracking. No surprise invoices. Scope adjusts as you grow.</p></div>
+<div class="sg">
+<div class="sc" onclick="go('pk1')">
+<div class="sic">&#9744;</div>
+<div class="stp"><h3>Relief</h3><div class="desc">"Take the weight off my desk"</div></div>
+<div class="plan-price-block">
+<div class="plan-amount">$500</div>
+<div class="plan-period">/month flat retainer</div>
+<div class="plan-vs">vs $3,000–$5,000/mo for a local hire</div>
+</div>
+<ul class="plan-features">
+<li>Inbox management &amp; triage</li>
+<li>Calendar &amp; scheduling</li>
+<li>CRM updates &amp; data entry</li>
+<li>Document prep &amp; filing</li>
+<li>Weekly summary report</li>
+<li>Travel &amp; logistics support</li>
+</ul>
+<div class="sftr"><span class="sbtn">View details &rarr;</span></div>
+</div>
+
+<div class="sc feat" onclick="go('pk2')">
+<div class="sbdg">Most popular</div>
+<div class="sic">&#9733;</div>
+<div class="stp"><h3>Growth</h3><div class="desc">"Run my ops so I can make money"</div></div>
+<div class="plan-price-block">
+<div class="plan-amount">$650</div>
+<div class="plan-period">/month flat retainer</div>
+<div class="plan-vs">vs $3,500–$5,500/mo for a local hire</div>
+</div>
+<ul class="plan-features">
+<li>Everything in Relief, plus&hellip;</li>
+<li>Content creation &amp; scheduling</li>
+<li>Lead generation &amp; outreach support</li>
+<li>Email marketing &amp; newsletters</li>
+<li>Pipeline tracking &amp; follow-up</li>
+<li>Launch &amp; event support</li>
+</ul>
+<div class="sftr"><span class="sbtn">View details &rarr;</span></div>
+</div>
+
+<div class="sc" onclick="go('pk3')">
+<div class="sic">&#10070;</div>
+<div class="stp"><h3>Operator</h3><div class="desc">"Be my right hand. Own it."</div></div>
+<div class="plan-price-block">
+<div class="plan-amount">$900</div>
+<div class="plan-period">/month flat retainer</div>
+<div class="plan-vs">vs $5,000–$7,000/mo for a local hire</div>
+</div>
+<ul class="plan-features">
+<li>Everything in Growth, plus&hellip;</li>
+<li>Full outreach campaign management</li>
+<li>SOP creation &amp; documentation</li>
+<li>Team &amp; vendor coordination</li>
+<li>Business reporting &amp; dashboards</li>
+<li>Monthly strategy review call</li>
+</ul>
+<div class="sftr"><span class="sbtn">View details &rarr;</span></div>
+</div>
+</div>
+<div class="cc"><h3>Need something custom?</h3><p>Every business is different. If your needs sit across multiple areas, we'll build a scope that works &mdash; without overcomplicating it.</p><span class="btn bp" onclick="go('contact')">Book a discovery call &rarr;</span></div>
+</div>
+
+<div class="s sl"><div class="sh"><h2 style="font-size:28px">Not sure which plan is right?</h2><p>Book a free call and we'll figure it out together. Most clients start with Relief or Growth and adjust from there.</p></div><div style="text-align:center"><span class="btn bp" onclick="go('contact')">Let's talk &rarr;</span></div></div>
+
+<div class="s">
+<div class="sh"><div class="ey">FAQ</div><h2>Common questions</h2></div>
+<div style="max-width:640px;margin:0 auto">
+<div class="fq"><div class="fqq">How quickly can you start?</div><div class="fqa">Within 48 hours of signing the agreement. I onboard myself into your tools and rhythm without disrupting your workflow.</div></div>
+<div class="fq"><div class="fqq">Is there a minimum contract period?</div><div class="fqa">No minimum. All plans run month to month and can be cancelled with 14 days written notice. No penalties, no awkward conversations.</div></div>
+<div class="fq"><div class="fqq">What tools do you work with?</div><div class="fqa">Smartlead, LinkedIn, HubSpot, Asana, Notion, Monday, Zoho, Mailchimp, Canva, Google Workspace, and more. If you use it, I can likely work in it.</div></div>
+<div class="fq"><div class="fqq">Can I change plans as my needs grow?</div><div class="fqa">Absolutely. Your support adjusts as your business evolves. We review what's working and update scope as needed.</div></div>
+<div class="fq"><div class="fqq">How do I pay?</div><div class="fqa">All invoices are issued monthly via Payoneer. Payment is due within 7 days of the invoice date. All amounts are in USD.</div></div>
+<div class="fq"><div class="fqq">Do you work with clients outside Kenya?</div><div class="fqa">Yes. I work with clients in the US, UK, Canada, Australia, and beyond. Time zones have never been an issue &mdash; your business runs smoothly regardless of where you are.</div></div>
+</div>
+</div>
+</div>
+
+<!-- ========== PACKAGE DETAILS ========== -->
+<div id="pk1" class="pg"><div class="s"><div class="pkd">
+<a class="pkb" onclick="go('services')">&larr; Back to services</a>
+<div class="pkh">
+<h1>Relief Plan</h1>
+<div class="desc">"Take the weight off my desk" &mdash; for business owners drowning in day-to-day admin, inbox chaos, and scheduling.</div>
+<div class="price-big" style="font-family:var(--fd);font-size:52px;font-weight:600;color:var(--plum);line-height:1;margin:20px 0 4px">$500</div>
+<div style="font-size:15px;color:var(--soft)">/month flat retainer</div>
+<div style="font-size:13px;color:var(--success);font-weight:500;margin-top:6px">Local hire equivalent: $3,000–$5,000/month</div>
+</div>
+<div class="pkdi"><h3>Inbox management &amp; triage</h3><p>Your inbox gets organised, triaged, and actioned daily. Important messages never get buried. Leads never go cold because an email wasn't seen.</p></div>
+<div class="pkdi"><h3>Calendar &amp; scheduling</h3><p>Appointments booked, conflicts resolved, buffer time protected. Your schedule works for you, not against you.</p></div>
+<div class="pkdi"><h3>CRM updates &amp; data entry</h3><p>Clean, accurate records. Contacts added, deals updated, nothing left stale. Your CRM actually reflects reality.</p></div>
+<div class="pkdi"><h3>Document prep &amp; filing</h3><p>Proposals, reports, contracts, and business documents prepared and filed where they belong. Find anything instantly.</p></div>
+<div class="pkdi"><h3>Weekly summary report</h3><p>Every Monday you know exactly what was handled, what's in progress, and what needs your attention. Full visibility without micromanaging.</p></div>
+<div class="pkdi"><h3>Travel &amp; logistics support</h3><p>Flights, hotels, itineraries, and on-the-ground logistics handled end to end so you arrive ready.</p></div>
+<div style="text-align:center;padding-top:32px"><span class="btn bp" onclick="go('contact')">Get started &rarr;</span></div>
+</div></div></div>
+
+<div id="pk2" class="pg"><div class="s"><div class="pkd">
+<a class="pkb" onclick="go('services')">&larr; Back to services</a>
+<div class="pkh">
+<h1>Growth Plan</h1>
+<div class="desc">"Run my ops so I can make money" &mdash; for business owners who need the back end handled AND the revenue engine running.</div>
+<div class="price-big" style="font-family:var(--fd);font-size:52px;font-weight:600;color:var(--plum);line-height:1;margin:20px 0 4px">$650</div>
+<div style="font-size:15px;color:var(--soft)">/month flat retainer</div>
+<div style="font-size:13px;color:var(--success);font-weight:500;margin-top:6px">Local hire equivalent: $3,500–$5,500/month</div>
+</div>
+<div class="pkinc">Includes everything in the Relief Plan, plus:</div>
+<div class="pkdi"><h3>Content creation &amp; scheduling</h3><p>LinkedIn posts, newsletters, and social content written in your voice and scheduled in advance. Your audience stays warm and engaged without you thinking about it.</p></div>
+<div class="pkdi"><h3>Lead generation &amp; outreach support</h3><p>Your outreach sequences managed and monitored. Prospects researched, lists built, campaigns tracked. Your pipeline stays full while you focus on delivery.</p></div>
+<div class="pkdi"><h3>Email marketing &amp; newsletters</h3><p>Sequences and campaigns designed, written, and sent. Your email list stays engaged between launches and doesn't go cold.</p></div>
+<div class="pkdi"><h3>Pipeline tracking &amp; follow-up</h3><p>No lead goes cold. Follow-ups happen on time, every time. Every interested prospect gets a response before they lose interest.</p></div>
+<div class="pkdi"><h3>Client onboarding coordination</h3><p>New clients get a smooth, professional welcome. Questionnaires sent, access granted, onboarding calls booked &mdash; all handled.</p></div>
+<div class="pkdi"><h3>Launch &amp; event support</h3><p>Coordinating a programme launch, webinar, or event? The logistics are managed so you can focus on showing up and delivering.</p></div>
+<div style="text-align:center;padding-top:32px"><span class="btn bp" onclick="go('contact')">Get started &rarr;</span></div>
+</div></div></div>
+
+<div id="pk3" class="pg"><div class="s"><div class="pkd">
+<a class="pkb" onclick="go('services')">&larr; Back to services</a>
+<div class="pkh">
+<h1>Operator Plan</h1>
+<div class="desc">"Be my right hand. Own it." &mdash; for founders who want one person running the full operation so they can focus entirely on growth.</div>
+<div class="price-big" style="font-family:var(--fd);font-size:52px;font-weight:600;color:var(--plum);line-height:1;margin:20px 0 4px">$900</div>
+<div style="font-size:15px;color:var(--soft)">/month flat retainer</div>
+<div style="font-size:13px;color:var(--success);font-weight:500;margin-top:6px">Local hire equivalent: $5,000–$7,000/month</div>
+</div>
+<div class="pkinc">Includes everything in the Relief and Growth Plans, plus:</div>
+<div class="pkdi"><h3>Full outreach campaign management</h3><p>End-to-end management of cold email and LinkedIn campaigns. Sequences written, sent, monitored, and optimised. You review replies &mdash; everything else is handled.</p></div>
+<div class="pkdi"><h3>SOP creation &amp; documentation</h3><p>Your processes get documented into clear, repeatable systems. Nothing depends on memory. Essential for scaling.</p></div>
+<div class="pkdi"><h3>Team &amp; vendor coordination</h3><p>Freelancers, contractors, and suppliers managed. Briefs sent, deliverables tracked, follow-ups handled. You stay out of the coordination weeds.</p></div>
+<div class="pkdi"><h3>Business reporting &amp; dashboards</h3><p>Clear weekly and monthly reporting on pipeline, content performance, and key metrics. You always know where things stand.</p></div>
+<div class="pkdi"><h3>Monthly strategy review call</h3><p>30 minutes every month to review what's working, what needs adjusting, and where to focus next. One conversation keeps everything aligned.</p></div>
+<div style="text-align:center;padding-top:32px"><span class="btn bp" onclick="go('contact')">Get started &rarr;</span></div>
+</div></div></div>
+
+<!-- ========== ABOUT ========== -->
+<div id="about" class="pg">
+<div class="abh">
+<div class="abi">
+  <!-- Drop your photo as images/whitney-profile.jpg to replace this placeholder -->
+  <div class="abi-placeholder">
+    <div class="abit">Your photo here</div>
+  </div>
+</div>
+<div class="abt">
+<h1>Hi, I'm Whitney.</h1>
+<div class="tag">The calm behind the chaos.</div>
+<p>I studied hospitality management &mdash; an industry built on anticipating what people need before they ask, managing a hundred moving parts at once, and making sure everyone feels taken care of. I didn't know it at the time, but that training would become the foundation of everything I do now.</p>
+<p>In 2022, someone close to me introduced me to virtual assistance, and something clicked. The skills I'd built &mdash; staying organised under pressure, keeping things running behind the scenes, paying attention to the details other people miss &mdash; were exactly what business owners needed.</p>
+<p>I started, landed my first client, and haven't stopped growing since. Today I support coaches, speakers, founders, and real estate professionals across operations, content, lead generation, and full business support &mdash; from Nairobi, Kenya, serving clients globally.</p>
+</div>
+</div>
+
+<div class="s sl">
+<div class="sh"><div class="ey">The mission</div><h2>Why I'm building this</h2></div>
+<div style="max-width:600px;margin:0 auto;text-align:center">
+<p style="font-size:16px;color:#5C4F82;line-height:1.9;margin-bottom:16px;font-family:var(--fd);font-style:italic">I'm building Whitney Ops because I believe in financial freedom &mdash; for myself, for my family, and eventually for the team I'll build around this.</p>
+<p style="font-size:15px;color:#6B6580;line-height:1.8">Every client I serve is a step toward something bigger. What starts as one person supporting your business will grow into a full team &mdash; but the standard of care, attention, and reliability will always stay the same.</p>
+</div>
+</div>
+
+<div class="s">
+<div class="sh"><div class="ey">Beyond work</div><h2>A little more about me</h2></div>
+<div style="max-width:600px;margin:0 auto;text-align:center">
+<p style="font-size:15px;color:#6B6580;line-height:1.9">When I'm not working, you'll find me trying a new recipe in the kitchen, reading, listening to music, exploring new places, or spending time with my church community. I'm also passionate about building community &mdash; I believe we grow better when we grow together.</p>
+<p style="font-size:15px;color:#6B6580;line-height:1.9;margin-top:12px">I'm based in Nairobi, Kenya, and I work with clients all over the world.</p>
+</div>
+</div>
+
+<div class="s sa">
+<div class="sh"><div class="ey">Working style</div><h2>What it's like working with me</h2></div>
+<div class="syg">
+<div class="syc"><h3>Calm, steady, reliable</h3><p>Things get done when they're supposed to. Follow-ups don't disappear. You're not constantly checking in wondering what happened.</p></div>
+<div class="syc"><h3>Detail-aware, big-picture minded</h3><p>I handle details carefully but never lose sight of what matters. Small things don't turn into big distractions.</p></div>
+<div class="syc"><h3>Proactive, not reactive</h3><p>I don't wait to be told. If something needs attention, I flag it. If something's about to fall through, I catch it first.</p></div>
+<div class="syc"><h3>Flexible as things evolve</h3><p>As your business grows or changes, support adjusts with it. No rigid systems or unnecessary complexity.</p></div>
+</div>
+</div>
+
+<div class="s">
+<div class="sh"><div class="ey">Toolkit</div><h2>Tools I work with daily</h2></div>
+<div class="tw">
+<span class="ttag">Smartlead</span><span class="ttag">Dripify</span><span class="ttag">LinkedIn</span><span class="ttag">HubSpot</span><span class="ttag">Asana</span><span class="ttag">Notion</span><span class="ttag">Monday</span><span class="ttag">Zoho</span><span class="ttag">Mailchimp</span><span class="ttag">Canva</span><span class="ttag">Loomly</span><span class="ttag">Google Workspace</span><span class="ttag">WordPress</span><span class="ttag">Wix</span><span class="ttag">Kajabi</span><span class="ttag">Instagram</span><span class="ttag">Facebook</span><span class="ttag">Discord</span>
+<p style="font-size:13px;color:#9994A8;margin-top:16px">If you use something not on this list &mdash; I learn new tools quickly.</p>
+</div>
+</div>
+
+<div class="s sa" style="text-align:center">
+<span class="btn bp" onclick="go('contact')">Let's work together &rarr;</span>
+</div>
+</div>
+
+<!-- ========== RESOURCES ========== -->
+<div id="resources" class="pg">
+<div class="s">
+<div class="sh"><div class="ey">Free stuff</div><h2>Free resources</h2><p>Practical tools to help you get organised, stay consistent, and take things off your plate &mdash; before you ever work with me.</p></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto">
+
+<div class="rc">
+<div class="ric"><img src="images/resources/checklist-thumb.svg" alt=""></div>
+<h3>The 5-task delegation checklist</h3>
+<p>Not sure what to hand off first? The five highest-leverage tasks to delegate when you're drowning in admin.</p>
+<!-- Replace # with your PDF path or external link -->
+<a class="btn bp" href="#" style="font-size:12px;padding:10px 20px;display:inline-flex">Download free</a>
+</div>
+
+<div class="rc">
+<div class="ric"><img src="images/resources/inbox-thumb.svg" alt=""></div>
+<h3>The inbox detox guide</h3>
+<p>5 steps to take your inbox from chaos to zero in one afternoon. Simple, actionable, immediate results.</p>
+<a class="btn bp" href="#" style="font-size:12px;padding:10px 20px;display:inline-flex">Download free</a>
+</div>
+
+<div class="rc">
+<div class="ric"><img src="images/resources/planner-thumb.svg" alt=""></div>
+<h3>Social media consistency planner</h3>
+<p>A simple weekly template for planning content without overwhelm. Know what to post, when, and where.</p>
+<a class="btn bp" href="#" style="font-size:12px;padding:10px 20px;display:inline-flex">Download free</a>
+</div>
+
+<div class="rc">
+<div class="ric"><img src="images/resources/leadgen-thumb.svg" alt=""></div>
+<h3>The lead gen starter kit</h3>
+<p>A step-by-step checklist for setting up your first LinkedIn outreach campaign from scratch.</p>
+<a class="btn bp" href="#" style="font-size:12px;padding:10px 20px;display:inline-flex">Download free</a>
+</div>
+
+<div class="rc">
+<div class="ric"><img src="images/resources/quiz-thumb.svg" alt=""></div>
+<h3>Is it time to hire a VA?</h3>
+<p>A simple scorecard that helps you decide if you're ready for support &mdash; and what kind you need most.</p>
+<a class="btn bp" href="#" style="font-size:12px;padding:10px 20px;display:inline-flex">Take the quiz</a>
+</div>
+
+<div class="rc">
+<div class="ric"><img src="images/resources/ceo-thumb.svg" alt=""></div>
+<h3>Weekly CEO review template</h3>
+<p>A one-page template for reviewing what happened in your business each week. Clarity in 10 minutes.</p>
+<a class="btn bp" href="#" style="font-size:12px;padding:10px 20px;display:inline-flex">Download free</a>
+</div>
+
+</div>
+<p style="text-align:center;font-size:13px;color:#9994A8;margin-top:24px">New resources added regularly. Follow me on <a href="https://linkedin.com/in/whitney-imbuhila" target="_blank" rel="noopener" style="color:var(--lilac);text-decoration:none;">LinkedIn</a> to be the first to know.</p>
+</div>
+</div>
+
+<!-- ========== CONTACT ========== -->
+<div id="contact" class="pg">
+<div class="s">
+<div class="sh"><div class="ey">Get in touch</div><h2>Let's talk about your business</h2><p>Book a free 20-minute call. No pitch. No pressure. Just a conversation about what support could look like.</p></div>
+<div class="cg">
+<div class="ccard">
+<h2>Book a call</h2>
+<p>Choose a time that works for you. The call is 20 minutes and completely free.</p>
+<!-- CALENDLY: Replace the div below with your Calendly embed snippet -->
+<!-- Option A (inline embed): paste the Calendly inline widget code here -->
+<!-- Option B (simple link): use the button below instead -->
+<div class="calp">
+  <span style="font-size:13px;color:var(--soft);font-style:normal;">Calendly booking will appear here.</span>
+  <span style="font-size:12px;color:var(--soft);font-style:normal;">Add your Calendly URL to activate this widget.</span>
+  <!-- Uncomment and update the line below once you have your Calendly URL:
+  <a class="btn bp" href="https://calendly.com/YOUR-LINK" target="_blank" rel="noopener">Pick a time →</a>
+  -->
+</div>
+</div>
+<div>
+<div class="ccard" style="margin-bottom:24px"><h2>Get the free checklist</h2><p>The 5-task delegation checklist &mdash; know exactly what to hand off first.</p><input class="fi" type="email" placeholder="Your email address"><span class="btn bp" style="width:100%;text-align:center;display:block;font-size:13px">Send me the checklist &rarr;</span></div>
+<div style="padding:0 4px">
+<h2 style="font-family:var(--fd);font-size:22px;margin-bottom:20px">Get in touch directly</h2>
+<div class="ii">
+  <div class="iic">&#9993;</div>
+  <div class="iit">
+    <strong>Email</strong>
+    <a href="mailto:whitney@virtualserviceske.com" style="color:var(--mid);text-decoration:none;">whitney@virtualserviceske.com</a>
+  </div>
+</div>
+<div class="ii">
+  <div class="iic">in</div>
+  <div class="iit">
+    <strong>LinkedIn</strong>
+    <a href="https://linkedin.com/in/whitney-imbuhila" target="_blank" rel="noopener" style="color:var(--mid);text-decoration:none;">linkedin.com/in/whitney-imbuhila</a>
+  </div>
+</div>
+<div class="ii">
+  <div class="iic">&#9678;</div>
+  <div class="iit">
+    <strong>Location</strong>
+    Nairobi, Kenya &mdash; working globally
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer>
+<div class="fl">Whitney Ops</div>
+<div class="fs">Operations &amp; Growth Partner</div>
+<div class="fln">
+  <a href="mailto:whitney@virtualserviceske.com" style="color:rgba(255,255,255,0.6);text-decoration:none;">whitney@virtualserviceske.com</a>
+  &middot;
+  <a href="https://virtualserviceske.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6);text-decoration:none;">virtualserviceske.com</a>
+</div>
+<div class="fc">&copy; 2026 Whitney Ops. All rights reserved.</div>
+</footer>
+</div>
+
+<script>
+function go(id){
+document.querySelectorAll('.pg').forEach(function(p){p.classList.remove('active')});
+document.querySelectorAll('.nl a:not(.ncta)').forEach(function(a){a.classList.remove('active')});
+var m={home:'n0',services:'n1',about:'n2',resources:'n3',contact:'n4',pk1:'n1',pk2:'n1',pk3:'n1'};
+var e=document.getElementById(id);if(e)e.classList.add('active');
+if(m[id]){var n=document.getElementById(m[id]);if(n)n.classList.add('active')}
+window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
