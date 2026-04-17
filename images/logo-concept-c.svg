@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" fill="none">
+  <!-- Concept C: Rounded Square Mark + Wordmark — versatile, modern -->
+  <!-- Plum rounded square icon -->
+  <rect x="0" y="8" width="84" height="84" rx="22" fill="#5C4F82"/>
+  <!-- WI in white inside square -->
+  <text x="42" y="68" font-family="Georgia,serif" font-size="46" font-style="italic" fill="#FFFFFF" text-anchor="middle" opacity="0.95">WI</text>
+  <!-- Small lilac dot accent top-right of square -->
+  <circle cx="72" cy="20" r="6" fill="#C8BFDF" opacity="0.9"/>
+  <!-- Wordmark to the right -->
+  <text x="104" y="52" font-family="Georgia,serif" font-size="28" font-weight="500" fill="#5C4F82" letter-spacing="-0.5">Whitney Ops</text>
+  <text x="105" y="70" font-family="Arial,sans-serif" font-size="10" fill="#9B8EC4" letter-spacing="3.5">OPERATIONS &amp; GROWTH</text>
+</svg>
