@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" fill="none">
-  <rect width="34" height="34" rx="10" fill="#9B8EC4"/>
-  <path d="M9 24L13.5 10h2.2l3 9.5L21.8 10H24l-5.5 14h-2L13 14.5 9.5 24H9z" fill="#fff" opacity="0.95"/>
-  <circle cx="27" cy="11" r="2.5" fill="#C8BFDF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 84" fill="none">
+  <rect width="84" height="84" rx="22" fill="#5C4F82"/>
+  <text x="42" y="62" font-family="Georgia,serif" font-size="46" font-style="italic" fill="#FFFFFF" text-anchor="middle" opacity="0.95">WI</text>
+  <circle cx="72" cy="14" r="7" fill="#C8BFDF" opacity="0.9"/>
 </svg>
