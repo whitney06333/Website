@@ -1,0 +1,5 @@
+.claude/
+old website images/
+.DS_Store
+Thumbs.db
+*.log

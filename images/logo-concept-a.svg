@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" fill="none">
+  <!-- Concept A: Editorial Serif Monogram — large italic WI, no container, lilac accent line -->
+  <text x="12" y="78" font-family="Georgia,serif" font-size="72" font-style="italic" font-weight="400" fill="#5C4F82">W</text>
+  <text x="158" y="78" font-family="Georgia,serif" font-size="72" font-style="italic" font-weight="400" fill="#9B8EC4">I</text>
+  <!-- Lilac dot separator -->
+  <circle cx="150" cy="52" r="5" fill="#C8BFDF"/>
+  <!-- Thin accent line beneath -->
+  <rect x="12" y="86" width="220" height="2" rx="1" fill="#C8BFDF" opacity="0.6"/>
+</svg>
