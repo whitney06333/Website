@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--lilac:#9B8EC4;--lilac-deep:#7B6FA8;--lilac-light:#C8BFDF;--lilac-pale:#EDE9F5;--lilac-wash:#F8F6FC;--plum:#5C4F82;--dark:#1E1B2E;--mid:#6B6580;--soft:#9994A8;--white:#FFFFFF;--off-white:#FDFCFE;--border:#E8E4F0;--success:#6BBF7B;--fd:'Playfair Display',Georgia,serif;--fb:'Outfit',sans-serif;--ease:cubic-bezier(0.4,0,0.2,1)}
@@ -132,16 +133,23 @@ nav.menuopen .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45
 .pn{font-family:var(--fd);font-size:32px;color:var(--lilac-light);font-weight:500;margin-bottom:4px}
 .pd{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5}
 
-/* TESTIMONIALS */
-.tgrid{max-width:800px;margin:0 auto}
-.tc{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px;margin-bottom:20px;transition:all 0.3s var(--ease)}
-.tc:hover{box-shadow:0 8px 32px rgba(155,142,196,0.1);transform:translateY(-2px)}
-.tq{font-size:40px;color:var(--lilac-light);font-family:var(--fd);line-height:1;margin-bottom:12px}
-.tt{font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:16px;font-style:italic}
+/* TESTIMONIALS CAROUSEL */
+.tcarousel{max-width:740px;margin:0 auto;position:relative}
+.ttrack-wrap{overflow:hidden;border-radius:20px}
+.ttrack{display:flex;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1)}
+.tc{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:40px;flex:0 0 100%;box-sizing:border-box}
+.tq{font-size:44px;color:var(--lilac-light);font-family:var(--fd);line-height:1;margin-bottom:12px}
+.tt{font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:20px;font-style:italic}
 .ta{display:flex;align-items:center;gap:12px}
-.tav{width:44px;height:44px;border-radius:50%;background:var(--lilac-pale);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;color:var(--lilac)}
+.tav{width:44px;height:44px;border-radius:50%;background:var(--lilac-pale);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;color:var(--lilac);flex-shrink:0}
 .tn{font-size:14px;font-weight:500;color:var(--dark)}
 .tr{font-size:12px;color:var(--soft)}
+.tcontrols{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+.tarrow{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--border);background:var(--white);color:var(--plum);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s var(--ease);flex-shrink:0}
+.tarrow:hover{background:var(--lilac-pale);border-color:var(--lilac)}
+.tdots{display:flex;gap:8px;align-items:center}
+.tdot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all 0.3s var(--ease)}
+.tdot.active{background:var(--lilac);width:24px;border-radius:4px}
 
 /* WHO */
 .wg{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
@@ -526,31 +534,82 @@ body.loaded .hc4{animation:cardIn 0.6s var(--ease) 1.0s both}
 <!-- TESTIMONIALS -->
 <div class="s sa">
 <div class="sh"><div class="ey">Client words</div><h2>What clients say</h2></div>
-<div class="tgrid">
-<div class="tc">
-<div class="tq">&ldquo;</div>
-<div class="tt">Whitney consistently delivers outstanding results as a vital member of our team. Her dependability is unmatched; she meets every deadline while upholding the highest quality standards. What truly distinguishes Whitney is her &ldquo;can do&rdquo; attitude and problem-solving approach. Whitney blends technical skills with genuine care for her work, making her an invaluable team member. Her proactive communication and meticulous attention to detail give me full confidence in assigning her important projects. I recommend Whitney without hesitation.</div>
-<div class="ta">
-<div class="tav">L</div>
-<div>
-<div class="tn">Liz Goodgold</div>
-<div class="tr">Brand &amp; Growth Strategist &middot; Keynote Speaker &middot; Speech Coach</div>
+<div class="tcarousel">
+  <div class="ttrack-wrap">
+    <div class="ttrack" id="ttrack">
+
+      <div class="tc">
+        <div class="tq">&ldquo;</div>
+        <div class="tt">Whitney consistently delivers outstanding results as a vital member of our team. Her dependability is unmatched; she meets every deadline while upholding the highest quality standards. What truly distinguishes Whitney is her "can do" attitude and problem-solving approach. Whitney blends technical skills with genuine care for her work, making her an invaluable team member. Her proactive communication and meticulous attention to detail give me full confidence in assigning her important projects. I recommend Whitney without hesitation.</div>
+        <div class="ta">
+          <div class="tav">L</div>
+          <div>
+            <div class="tn">Liz Goodgold</div>
+            <div class="tr">Brand &amp; Growth Strategist &middot; Keynote Speaker &middot; Speech Coach</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="tq">&ldquo;</div>
+        <div class="tt">Whitney completely transformed how my business operates. My pipeline stays full, content goes out consistently, and I haven't missed a single follow-up since she started. She's not just a VA &mdash; she's the reason my business runs the way it should.</div>
+        <div class="ta">
+          <div class="tav">R</div>
+          <div>
+            <div class="tn">Ryan</div>
+            <div class="tr">Agency Owner &mdash; Lead Generation &amp; Outreach</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="tq">&ldquo;</div>
+        <div class="tt">Whitney has been a reliable support to our business, particularly with managing our LinkedIn and social media presence. She's consistent, easy to work with, and always willing to adapt and learn as the business evolves. Her communication and professionalism have been appreciated throughout our time working together.</div>
+        <div class="ta">
+          <div class="tav">N</div>
+          <div>
+            <div class="tn">Nigel Dods</div>
+            <div class="tr">Interim CEO, Bluemast</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="tcontrols">
+    <button class="tarrow" id="tprev" aria-label="Previous">&#8592;</button>
+    <div class="tdots" id="tdots"></div>
+    <button class="tarrow" id="tnext" aria-label="Next">&#8594;</button>
+  </div>
 </div>
 </div>
-</div>
-<div class="tc">
-<div class="tq">&ldquo;</div>
-<div class="tt">Whitney completely transformed how my business operates. My pipeline stays full, content goes out consistently, and I haven't missed a single follow-up since she started. She's not just a VA &mdash; she's the reason my business runs the way it should.</div>
-<div class="ta">
-<div class="tav">R</div>
-<div>
-<div class="tn">Ryan</div>
-<div class="tr">Agency Owner &mdash; Lead Generation &amp; Outreach</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<script>
+(function(){
+  var track = document.getElementById('ttrack');
+  var slides = track ? track.children : [];
+  var dotsWrap = document.getElementById('tdots');
+  var current = 0;
+  function buildDots(){
+    dotsWrap.innerHTML = '';
+    for(var i = 0; i < slides.length; i++){
+      var d = document.createElement('div');
+      d.className = 'tdot' + (i === 0 ? ' active' : '');
+      d.dataset.i = i;
+      d.addEventListener('click', function(){ goTo(+this.dataset.i); });
+      dotsWrap.appendChild(d);
+    }
+  }
+  function goTo(n){
+    current = (n + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    document.querySelectorAll('.tdot').forEach(function(d,i){ d.classList.toggle('active', i === current); });
+  }
+  document.getElementById('tprev').addEventListener('click', function(){ goTo(current - 1); });
+  document.getElementById('tnext').addEventListener('click', function(){ goTo(current + 1); });
+  buildDots();
+})();
+</script>
 
 <!-- WHO THIS IS FOR - NICHES -->
 <div class="s sl">
@@ -742,26 +801,22 @@ body.loaded .hc4{animation:cardIn 0.6s var(--ease) 1.0s both}
 </div>
 <div class="abt">
 <h1>Hi, I'm Whitney.</h1>
-<div class="tag">The calm behind the chaos.</div>
-<p>I studied hospitality management &mdash; an industry built on anticipating what people need before they ask, managing a hundred moving parts at once, and making sure everyone feels taken care of. I didn't know it at the time, but that training would become the foundation of everything I do now.</p>
-<p>In 2022, someone close to me introduced me to virtual assistance, and something clicked. The skills I'd built &mdash; staying organised under pressure, keeping things running behind the scenes, paying attention to the details other people miss &mdash; were exactly what business owners needed.</p>
-<p>I started, landed my first client, and haven't stopped growing since. Today I support coaches, speakers, founders, and real estate professionals across operations, content, lead generation, and full business support &mdash; from Nairobi, Kenya, serving clients globally.</p>
+<div class="tag">The calm behind the chaos.<br>The person behind Virtual Services KE.</div>
+<p>I've always been someone who genuinely enjoys helping things run smoothly. Whether it's organizing workflows, supporting clients behind the scenes, managing communication, or bringing structure to a busy business, I love being the reliable person people can count on.</p>
+<p>My journey started in social media management and digital support, but over time, I realized my real passion was helping business owners feel less overwhelmed and more supported in the day-to-day running of their businesses. Since then, I've worked with founders, consultants, and growing brands across different areas of business support &mdash; from executive assistance and systems management to content coordination, client communication, and online operations.</p>
+<p>What matters most to me is creating working relationships that feel human, dependable, and long-term. I care deeply about doing great work, communicating well, and making life easier for the people I work with.</p>
+<p>I'm based in Nairobi and work remotely with clients around the world. Outside of work, I enjoy cooking, traveling, learning new skills, and finding creative ways to continue growing both personally and professionally.</p>
+<p>For me, this work has never just been about checking tasks off a list &mdash; it's about helping people build businesses and lives that feel lighter, more organized, and more sustainable.</p>
 </div>
 </div>
 
 <div class="s sl">
 <div class="sh"><div class="ey">The mission</div><h2>Why I'm building this</h2></div>
-<div style="max-width:600px;margin:0 auto;text-align:center">
-<p style="font-size:16px;color:#5C4F82;line-height:1.9;margin-bottom:16px;font-family:var(--fd);font-style:italic">I'm building Whitney Ops because I believe in financial freedom &mdash; for myself, for my family, and eventually for the team I'll build around this.</p>
-<p style="font-size:15px;color:#6B6580;line-height:1.8">Every client I serve is a step toward something bigger. What starts as one person supporting your business will grow into a full team &mdash; but the standard of care, attention, and reliability will always stay the same.</p>
-</div>
-</div>
-
-<div class="s">
-<div class="sh"><div class="ey">Beyond work</div><h2>A little more about me</h2></div>
-<div style="max-width:600px;margin:0 auto;text-align:center">
-<p style="font-size:15px;color:#6B6580;line-height:1.9">When I'm not working, you'll find me trying a new recipe in the kitchen, reading, listening to music, exploring new places, or spending time with my church community. I'm also passionate about building community &mdash; I believe we grow better when we grow together.</p>
-<p style="font-size:15px;color:#6B6580;line-height:1.9;margin-top:12px">I'm based in Nairobi, Kenya, and I work with clients all over the world.</p>
+<div style="max-width:720px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:15px;color:#6B6580;line-height:1.85">I'm building this because I know how overwhelming running a business can feel when you're trying to do everything on your own. So many founders and business owners are brilliant at what they do, but they're stretched thin managing admin, communication, content, scheduling, operations, and the endless behind-the-scenes tasks that keep a business running. I wanted to create a service that genuinely helps lighten that load.</p>
+<p style="font-size:15px;color:#6B6580;line-height:1.85">What started as offering virtual support grew into something much more meaningful for me &mdash; becoming a trusted support partner that helps businesses operate more smoothly while giving founders more time, clarity, and peace of mind.</p>
+<p style="font-size:15px;color:#6B6580;line-height:1.85">I'm also building this because I believe remote work has the power to create opportunities beyond borders. From Nairobi, I've been able to work with incredible people around the world, grow professionally, and build something of my own with purpose and intention.</p>
+<p style="font-size:15px;color:#6B6580;line-height:1.85">At the heart of it all, I'm building this to create impact &mdash; for the clients I support, the businesses I help behind the scenes, and the future I'm working toward for myself.</p>
 </div>
 </div>
 
@@ -769,8 +824,8 @@ body.loaded .hc4{animation:cardIn 0.6s var(--ease) 1.0s both}
 <div class="sh"><div class="ey">Working style</div><h2>What it's like working with me</h2></div>
 <div class="syg">
 <div class="syc"><h3>Calm, steady, reliable</h3><p>Things get done when they're supposed to. Follow-ups don't disappear. You're not constantly checking in wondering what happened.</p></div>
-<div class="syc"><h3>Detail-aware, big-picture minded</h3><p>I handle details carefully but never lose sight of what matters. Small things don't turn into big distractions.</p></div>
-<div class="syc"><h3>Proactive, not reactive</h3><p>I don't wait to be told. If something needs attention, I flag it. If something's about to fall through, I catch it first.</p></div>
+<div class="syc"><h3>Great Partnership</h3><p>Beyond tasks and systems, I care about creating a supportive experience. I want my clients to feel less overwhelmed, more supported, and confident knowing they have someone dependable in their corner.</p></div>
+<div class="syc"><h3>Clear Communication</h3><p>I value professionalism, transparency, and consistency. You can expect timely communication, reliability, and a collaborative working relationship built on trust.</p></div>
 <div class="syc"><h3>Flexible as things evolve</h3><p>As your business grows or changes, support adjusts with it. No rigid systems or unnecessary complexity.</p></div>
 </div>
 </div>
@@ -784,7 +839,7 @@ body.loaded .hc4{animation:cardIn 0.6s var(--ease) 1.0s both}
 </div>
 
 <div class="s sa" style="text-align:center">
-<span class="btn bp" onclick="go('contact')">Let's work together &rarr;</span>
+<a class="btn bp" href="https://calendly.com/omindewhitney/30min" target="_blank" rel="noopener">Let's work together &rarr;</a>
 </div>
 </div>
 
@@ -850,15 +905,9 @@ body.loaded .hc4{animation:cardIn 0.6s var(--ease) 1.0s both}
 <div class="ccard">
 <h2>Book a call</h2>
 <p>Choose a time that works for you. The call is 20 minutes and completely free.</p>
-<!-- CALENDLY: Replace the div below with your Calendly embed snippet -->
-<!-- Option A (inline embed): paste the Calendly inline widget code here -->
-<!-- Option B (simple link): use the button below instead -->
-<div class="calp">
-  <span style="font-size:13px;color:var(--soft);font-style:normal;">Calendly booking will appear here.</span>
-  <span style="font-size:12px;color:var(--soft);font-style:normal;">Add your Calendly URL to activate this widget.</span>
-  <!-- Uncomment and update the line below once you have your Calendly URL:
-  <a class="btn bp" href="https://calendly.com/YOUR-LINK" target="_blank" rel="noopener">Pick a time →</a>
-  -->
+<div id="calendly-inline" class="calendly-inline-widget" data-url="https://calendly.com/omindewhitney/30min?hide_gdpr_banner=1&primary_color=9B8EC4" style="min-width:280px;height:660px;"></div>
+<div id="calendly-button" style="display:none;text-align:center;padding:32px 0;">
+  <a class="btn bp" href="https://calendly.com/omindewhitney/30min" target="_blank" rel="noopener">Pick a time &rarr;</a>
 </div>
 </div>
 <div>
@@ -1212,5 +1261,6 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(initTypingCursor, 1600);
 });
 </script>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
