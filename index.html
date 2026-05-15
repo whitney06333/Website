@@ -4,19 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Whitney Ops | Operations & Growth Partner</title>
-<meta name="description" content="Virtual assistant services for coaches, speakers, founders, and real estate professionals — flat monthly retainers, no hourly tracking. Whitney Ops keeps your business running so you can grow.">
+<meta name="description" content="Virtual assistant services for coaches, speakers, founders, and real estate professionals on flat monthly retainers, no hourly tracking. Whitney Ops keeps your business running so you can grow.">
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <meta property="og:title" content="Whitney Ops | Operations & Growth Partner">
-<meta property="og:description" content="Virtual assistant services for coaches, speakers, founders, and real estate professionals — flat monthly retainers, no hourly tracking.">
+<meta property="og:description" content="Virtual assistant services for coaches, speakers, founders, and real estate professionals on flat monthly retainers, no hourly tracking.">
 <meta property="og:image" content="images/og-image.svg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--lilac:#9B8EC4;--lilac-deep:#7B6FA8;--lilac-light:#C8BFDF;--lilac-pale:#EDE9F5;--lilac-wash:#F8F6FC;--plum:#5C4F82;--dark:#1E1B2E;--mid:#6B6580;--soft:#9994A8;--white:#FFFFFF;--off-white:#FDFCFE;--border:#E8E4F0;--success:#6BBF7B;--fd:'Playfair Display',Georgia,serif;--fb:'Outfit',sans-serif;--ease:cubic-bezier(0.4,0,0.2,1)}
+:root{--lilac:#9B8EC4;--lilac-deep:#7B6FA8;--lilac-light:#C8BFDF;--lilac-pale:#EDE9F5;--lilac-wash:#F8F6FC;--plum:#5C4F82;--dark:#1E1B2E;--mid:#6B6580;--soft:#9994A8;--white:#FFFFFF;--off-white:#FDFCFE;--border:#E8E4F0;--success:#6BBF7B;--fd:'Playfair Display',Georgia,serif;--fb:'Outfit',sans-serif;--ease:cubic-bezier(0.4,0,0.2,1);--ease-out:cubic-bezier(0.23,1,0.32,1);--ease-in-out:cubic-bezier(0.77,0,0.175,1)}
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);color:var(--dark);line-height:1.6;background:var(--off-white);-webkit-font-smoothing:antialiased}
 .site{max-width:100%;overflow-x:hidden}
@@ -24,12 +25,17 @@ body{font-family:var(--fb);color:var(--dark);line-height:1.6;background:var(--of
 /* NAV */
 nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5%;background:rgba(253,252,254,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
 .logo{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none}
-.logo svg{transition:transform 0.3s var(--ease)}
+.logo svg{transition:transform 200ms var(--ease-out)}
 .logo:hover svg{transform:rotate(-5deg) scale(1.05)}
 .logo-text{font-family:var(--fd);font-size:18px;font-weight:600;color:var(--plum)}
 .logo-sub{font-family:var(--fb);font-size:10px;color:var(--lilac);letter-spacing:2px;text-transform:uppercase;font-weight:500;margin-top:-2px}
 .nl{display:flex;gap:24px;align-items:center}
-.nl a{text-decoration:none;color:var(--mid);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s;position:relative}
+.nav-toggle{display:none;background:transparent;border:0;cursor:pointer;width:40px;height:40px;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;z-index:110}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--plum);border-radius:2px;transition:transform 0.3s var(--ease),opacity 0.25s ease}
+nav.menuopen .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+nav.menuopen .nav-toggle span:nth-child(2){opacity:0}
+nav.menuopen .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nl a{text-decoration:none;color:var(--mid);font-size:13px;font-weight:500;cursor:pointer;transition:color 180ms var(--ease-out);position:relative}
 .nl a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--lilac);transition:width 0.3s var(--ease);border-radius:2px}
 .nl a:hover,.nl a.active{color:var(--plum)}
 .nl a:hover::after,.nl a.active::after{width:100%}
@@ -38,18 +44,19 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5
 .ncta:hover{background:var(--lilac-deep)!important;transform:translateY(-1px);box-shadow:0 4px 20px rgba(155,142,196,0.4)}
 
 /* PAGES */
-.pg{display:none;animation:fu 0.5s var(--ease)}.pg.active{display:block}
-@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.pg{display:none;animation:fu 350ms var(--ease-out)}.pg.active{display:block}
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
 
 /* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.3s var(--ease);border:none;font-family:var(--fb)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:500;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 200ms var(--ease-out),box-shadow 200ms var(--ease-out),border-color 200ms var(--ease-out),color 200ms var(--ease-out);border:none;font-family:var(--fb)}
+.btn:active,.sbtn:active,.ncta:active{transform:scale(0.97)}
 .bp{background:var(--lilac);color:var(--white);box-shadow:0 2px 16px rgba(155,142,196,0.3)}
-.bp:hover{background:var(--lilac-deep);transform:translateY(-2px);box-shadow:0 6px 24px rgba(155,142,196,0.4)}
+.bp:hover{background:var(--lilac-deep);box-shadow:0 6px 24px rgba(155,142,196,0.4)}
 .bg{background:transparent;color:var(--plum);border:1.5px solid var(--border)}
 .bg:hover{border-color:var(--lilac);background:var(--lilac-pale)}
 .bw{background:var(--white);color:var(--plum);box-shadow:0 2px 12px rgba(0,0,0,0.1)}
-.bw:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.15)}
+.bw:hover{box-shadow:0 6px 20px rgba(0,0,0,0.15)}
 
 /* SECTIONS */
 .s{padding:80px 8%}.sa{background:var(--white)}.sl{background:var(--lilac-wash)}.sd{background:var(--dark);color:var(--white)}
@@ -64,24 +71,24 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5
 .hero{display:flex;align-items:center;justify-content:space-between;padding:80px 8% 60px;gap:60px;min-height:75vh;position:relative}
 .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(155,142,196,0.08) 0%,transparent 70%);pointer-events:none}
 .ht{flex:1;max-width:580px}
-.ht .ey{font-size:12px;color:var(--lilac);letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.ht .ey span{width:24px;height:1px;background:var(--lilac)}
+.ht .ey{font-size:12px;color:var(--lilac);letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:16px}
 .ht h1{font-family:var(--fd);font-size:50px;font-weight:500;color:var(--dark);line-height:1.15;margin-bottom:20px;letter-spacing:-0.5px}
 .ht h1 em{color:var(--lilac);font-style:italic}
 .ht p{font-size:16px;color:var(--mid);line-height:1.8;margin-bottom:32px}
-.hv{flex:0 0 400px;height:480px;position:relative}
-.hc{background:var(--white);border-radius:20px;padding:24px;border:1px solid var(--border);box-shadow:0 8px 40px rgba(30,27,46,0.06);position:absolute;transition:all 0.4s var(--ease)}
-.hc:hover{transform:translateY(-4px);box-shadow:0 12px 48px rgba(155,142,196,0.15)}
-.hc1{top:0;left:20px;right:20px}.hc2{top:160px;left:0;right:40px}.hc3{top:300px;left:40px;right:0}.hc4{top:420px;left:10px;right:50px}
-.hcl{font-size:10px;color:var(--lilac);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
-.hcv{font-family:var(--fd);font-size:24px;color:var(--dark);font-weight:500}
-.hcs{font-size:12px;color:var(--soft);margin-top:3px}
+.hv{flex:0 0 420px;height:560px;position:relative}
+.hc{background:var(--white);border-radius:16px;padding:14px 18px;border:1px solid var(--border);box-shadow:0 14px 40px rgba(30,27,46,0.16);position:absolute;transition:transform 250ms var(--ease-out),box-shadow 250ms var(--ease-out);z-index:2;width:215px}
+.hv-photo{position:absolute;left:0;top:0;height:100%;width:100%;object-fit:cover;object-position:center 18%;border-radius:22px;z-index:0;display:block;box-shadow:0 28px 70px rgba(30,27,46,0.22)}
+.hc:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(155,142,196,0.24)}
+.hc1{top:28px;left:-72px}.hc2{top:178px;right:-72px}.hc3{top:332px;left:-72px}.hc4{top:472px;right:-72px}
+.hcl{font-size:10px;color:var(--lilac);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.hcv{font-family:var(--fd);font-size:18px;color:var(--dark);font-weight:500;line-height:1.2}
+.hcs{font-size:11px;color:var(--soft);margin-top:3px;line-height:1.45}
 .hcb{height:4px;background:var(--lilac-pale);border-radius:4px;margin-top:10px;overflow:hidden}
 .hcf{height:100%;background:linear-gradient(90deg,var(--lilac),var(--lilac-deep));border-radius:4px;animation:shimmer 2s infinite;background-size:200% 100%}
 
 /* PAIN */
 .pl{max-width:560px;margin:0 auto}
-.pi{display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);transition:all 0.3s var(--ease)}
+.pi{display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);transition:padding-left 200ms var(--ease-out)}
 .pi:hover{padding-left:8px}.pi:last-child{border:none}
 .pic{width:28px;height:28px;background:var(--lilac-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;color:var(--lilac);margin-top:2px}
 .pit{font-size:15px;color:var(--mid);line-height:1.6}
@@ -91,7 +98,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5
 
 /* PLAN CARDS */
 .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px;margin:0 auto}
-.sc{background:var(--white);border-radius:20px;border:1.5px solid var(--border);overflow:hidden;transition:all 0.4s var(--ease);cursor:pointer;position:relative}
+.sc{background:var(--white);border-radius:20px;border:1.5px solid var(--border);overflow:hidden;transition:transform 250ms var(--ease-out),box-shadow 250ms var(--ease-out),border-color 250ms var(--ease-out);cursor:pointer;position:relative}
 .sc:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(155,142,196,0.15);border-color:var(--lilac-light)}
 .sc.feat{border-color:var(--lilac);box-shadow:0 8px 32px rgba(155,142,196,0.12)}
 .sc.feat:hover{box-shadow:0 20px 60px rgba(155,142,196,0.25)}
@@ -109,7 +116,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5
 .plan-features li:last-child{border-bottom:none}
 .plan-features li::before{content:'→';color:var(--lilac);flex-shrink:0;font-size:12px;margin-top:1px}
 .sftr{padding:0 24px 24px}
-.sbtn{display:block;text-align:center;padding:12px;border-radius:50px;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.3s var(--ease);font-family:var(--fb);border:1.5px solid var(--border);color:var(--plum);background:transparent;text-decoration:none}
+.sbtn{display:block;text-align:center;padding:12px;border-radius:50px;font-size:13px;font-weight:500;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 200ms var(--ease-out),border-color 200ms var(--ease-out),color 200ms var(--ease-out);font-family:var(--fb);border:1.5px solid var(--border);color:var(--plum);background:transparent;text-decoration:none}
 .sbtn:hover{background:var(--lilac-pale);border-color:var(--lilac)}
 .sc.feat .sbtn{background:var(--lilac);color:var(--white);border-color:var(--lilac)}
 .sc.feat .sbtn:hover{background:var(--lilac-deep)}
@@ -121,31 +128,39 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5
 
 /* PROOF */
 .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:800px;margin:0 auto}
-.pitem{text-align:center;padding:24px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;transition:all 0.3s var(--ease)}
-.pitem:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px)}
+.pitem{text-align:center;padding:24px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;transition:transform 200ms var(--ease-out),background-color 200ms var(--ease-out)}
+.pitem:hover{background:rgba(255,255,255,0.1)}
 .pn{font-family:var(--fd);font-size:32px;color:var(--lilac-light);font-weight:500;margin-bottom:4px}
 .pd{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5}
 
-/* TESTIMONIALS */
-.tgrid{max-width:800px;margin:0 auto}
-.tc{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px;margin-bottom:20px;transition:all 0.3s var(--ease)}
-.tc:hover{box-shadow:0 8px 32px rgba(155,142,196,0.1);transform:translateY(-2px)}
-.tq{font-size:40px;color:var(--lilac-light);font-family:var(--fd);line-height:1;margin-bottom:12px}
-.tt{font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:16px;font-style:italic}
+/* TESTIMONIALS CAROUSEL */
+.tcarousel{max-width:740px;margin:0 auto;position:relative}
+.ttrack-wrap{overflow:hidden;border-radius:20px}
+.ttrack{display:flex;transition:transform 400ms var(--ease-out)}
+.tc{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:40px;flex:0 0 100%;box-sizing:border-box;box-shadow:0 4px 24px rgba(155,142,196,0.06)}
+.tq{font-size:44px;color:var(--lilac-light);font-family:var(--fd);line-height:1;margin-bottom:12px}
+.tt{font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:20px;font-style:italic}
 .ta{display:flex;align-items:center;gap:12px}
-.tav{width:44px;height:44px;border-radius:50%;background:var(--lilac-pale);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;color:var(--lilac)}
+.tav{width:44px;height:44px;border-radius:50%;background:var(--lilac-pale);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;color:var(--lilac);flex-shrink:0}
 .tn{font-size:14px;font-weight:500;color:var(--dark)}
 .tr{font-size:12px;color:var(--soft)}
+.tcontrols{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+.tarrow{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--border);background:var(--white);color:var(--plum);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform 160ms var(--ease-out),background-color 200ms var(--ease-out),border-color 200ms var(--ease-out);flex-shrink:0}
+.tarrow:active{transform:scale(0.92)}
+.tarrow:hover{background:var(--lilac-pale);border-color:var(--lilac)}
+.tdots{display:flex;gap:8px;align-items:center}
+.tdot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:width 250ms var(--ease-out),background-color 250ms var(--ease-out),border-radius 250ms var(--ease-out)}
+.tdot.active{background:var(--lilac);width:24px;border-radius:4px}
 
 /* WHO */
 .wg{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
-.wi{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--dark);padding:12px 16px;background:var(--white);border-radius:12px;border:1px solid var(--border);transition:all 0.3s var(--ease)}
+.wi{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--dark);padding:12px 16px;background:var(--white);border-radius:12px;border:1px solid var(--border);transition:transform 200ms var(--ease-out),border-color 200ms var(--ease-out),box-shadow 200ms var(--ease-out)}
 .wi:hover{border-color:var(--lilac-light);box-shadow:0 4px 16px rgba(155,142,196,0.08);transform:translateX(4px)}
 .wc{width:24px;height:24px;background:var(--lilac-pale);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--lilac);font-size:13px;font-weight:600;flex-shrink:0}
 
 /* NICHES */
 .niche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:840px;margin:0 auto}
-.niche-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all 0.3s var(--ease)}
+.niche-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;transition:transform 200ms var(--ease-out),border-color 200ms var(--ease-out),box-shadow 200ms var(--ease-out)}
 .niche-card:hover{border-color:var(--lilac-light);box-shadow:0 8px 32px rgba(155,142,196,0.1);transform:translateY(-2px)}
 .niche-icon{font-family:var(--fd);font-size:28px;color:var(--lilac);font-style:italic;margin-bottom:10px}
 .niche-title{font-family:var(--fd);font-size:17px;font-weight:500;color:var(--dark);margin-bottom:8px}
@@ -156,7 +171,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5
 /* STEPS */
 .stg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:840px;margin:0 auto}
 .sti{text-align:center;padding:28px 16px}
-.stn{width:48px;height:48px;border-radius:50%;background:var(--lilac-pale);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:20px;color:var(--lilac);margin:0 auto 16px;transition:all 0.3s var(--ease)}
+.stn{width:48px;height:48px;border-radius:50%;background:var(--lilac-pale);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:20px;color:var(--lilac);margin:0 auto 16px;transition:transform 200ms var(--ease-out),background-color 200ms var(--ease-out),color 200ms var(--ease-out)}
 .sti:hover .stn{background:var(--lilac);color:var(--white);transform:scale(1.1)}
 .stt{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:6px}
 .std{font-size:12px;color:var(--soft);line-height:1.5}
@@ -169,7 +184,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5
 
 /* PACKAGE DETAIL */
 .pkd{max-width:720px;margin:0 auto}
-.pkb{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--lilac);cursor:pointer;margin-bottom:20px;font-weight:500;text-decoration:none;transition:all 0.2s}
+.pkb{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--lilac);cursor:pointer;margin-bottom:20px;font-weight:500;text-decoration:none;transition:color 180ms var(--ease-out)}
 .pkb:hover{color:var(--plum)}
 .pkh{text-align:center;padding:32px 0 40px}
 .pkh h1{font-family:var(--fd);font-size:42px;font-weight:500;letter-spacing:-0.3px}
@@ -193,12 +208,12 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5
 .abt .tag{font-family:var(--fd);font-size:18px;color:var(--lilac);font-style:italic;margin-bottom:28px}
 .abt p{font-size:15px;color:var(--mid);line-height:1.9;margin-bottom:16px}
 .syg{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:720px;margin:0 auto}
-.syc{padding:28px;border:1px solid var(--border);border-radius:16px;background:var(--white);transition:all 0.3s var(--ease)}
+.syc{padding:28px;border:1px solid var(--border);border-radius:16px;background:var(--white);transition:transform 200ms var(--ease-out),border-color 200ms var(--ease-out),box-shadow 200ms var(--ease-out)}
 .syc:hover{border-color:var(--lilac-light);box-shadow:0 8px 32px rgba(155,142,196,0.1);transform:translateY(-2px)}
 .syc h3{font-family:var(--fd);font-size:18px;color:var(--plum);margin-bottom:10px}
 .syc p{font-size:13px;color:var(--mid);line-height:1.7}
 .tw{text-align:center;max-width:600px;margin:0 auto}
-.ttag{display:inline-block;padding:6px 16px;margin:4px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:13px;color:var(--mid);transition:all 0.2s var(--ease)}
+.ttag{display:inline-block;padding:6px 16px;margin:4px;background:var(--white);border:1px solid var(--border);border-radius:50px;font-size:13px;color:var(--mid);transition:border-color 200ms var(--ease-out),color 200ms var(--ease-out),background-color 200ms var(--ease-out)}
 .ttag:hover{border-color:var(--lilac);color:var(--plum);background:var(--lilac-pale)}
 
 /* CONTACT */
@@ -206,7 +221,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5
 .ccard{padding:36px;background:var(--white);border-radius:20px;border:1px solid var(--border)}
 .ccard h2{font-family:var(--fd);font-size:24px;margin-bottom:8px;color:var(--dark)}
 .ccard p{font-size:14px;color:var(--mid);margin-bottom:20px;line-height:1.7}
-.fi{width:100%;padding:14px 18px;border:1.5px solid var(--border);border-radius:12px;font-size:14px;font-family:var(--fb);margin-bottom:12px;background:var(--off-white);transition:all 0.2s var(--ease);outline:none}
+.fi{width:100%;padding:14px 18px;border:1.5px solid var(--border);border-radius:12px;font-size:14px;font-family:var(--fb);margin-bottom:12px;background:var(--off-white);transition:border-color 200ms var(--ease-out),box-shadow 200ms var(--ease-out);outline:none}
 .fi:focus{border-color:var(--lilac);box-shadow:0 0 0 3px rgba(155,142,196,0.15)}
 .ii{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
 .iic{width:40px;height:40px;background:var(--lilac-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--lilac);font-size:15px;font-weight:600}
@@ -215,11 +230,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5
 
 /* RESOURCES */
 .rg{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:640px;margin:0 auto}
-.rc{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px;text-align:center;transition:all 0.4s var(--ease)}
+.rc{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px;text-align:center;transition:transform 250ms var(--ease-out),box-shadow 250ms var(--ease-out),border-color 250ms var(--ease-out)}
 .rc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(155,142,196,0.12);border-color:var(--lilac-light)}
-.ric{width:56px;height:56px;background:var(--lilac-pale);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--lilac);font-size:22px;transition:all 0.3s var(--ease)}
+.ric{width:56px;height:56px;background:var(--lilac-pale);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--lilac);font-size:22px;transition:background-color 200ms var(--ease-out),color 200ms var(--ease-out)}
 .rc:hover .ric{background:var(--lilac);color:var(--white)}
-.ric img{width:28px;height:28px;display:block}
+.ric img{width:28px;height:28px;display:block;transition:filter 200ms var(--ease-out)}
+/* Flip the external SVG icon to white on hover (its strokes/fills are hardcoded lilac, so `color:white` on the parent can't reach them). */
+.rc:hover .ric img{filter:brightness(0) invert(1)}
 .rc h3{font-family:var(--fd);font-size:20px;color:var(--dark);margin-bottom:8px}
 .rc p{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:20px}
 
@@ -240,11 +257,33 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 .fc{font-size:11px;opacity:0.4;margin-top:12px}
 
 /* RESPONSIVE */
+@media(max-width:1100px){
+.hero{flex-direction:column;padding:60px 6% 40px;min-height:auto;gap:48px;align-items:stretch}
+.ht{max-width:none}
+.hv{flex:none;width:100%;max-width:460px;margin:0 auto;height:520px}
+.hc{width:190px;padding:12px 16px}
+.hc1{top:24px;left:-40px}.hc2{top:168px;right:-40px}.hc3{top:304px;left:-40px}.hc4{top:436px;right:-40px}
+.hcv{font-size:17px}
+.sg{grid-template-columns:repeat(2,1fr)}
+.stg{grid-template-columns:repeat(2,1fr)}
+.pgrid{grid-template-columns:repeat(2,1fr)}
+.niche-grid{grid-template-columns:repeat(2,1fr)}
+.abh{flex-direction:column;padding:60px 6% 40px;gap:40px;align-items:center}
+.abi{flex:none;width:100%;max-width:460px;height:420px}
+.abt{max-width:640px}
+.s{padding:70px 6%}
+}
 @media(max-width:768px){
-.hero{flex-direction:column;padding:40px 6%;min-height:auto}
+.hero{flex-direction:column;padding:40px 6%;min-height:auto;gap:32px}
 .hv{display:none}
 .ht h1{font-size:36px}
-.nl a:not(.ncta){display:none}
+.nav-toggle{display:flex}
+.nl{position:fixed;top:0;right:0;height:100vh;width:min(280px,80vw);background:rgba(253,252,254,0.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);flex-direction:column;align-items:stretch;justify-content:flex-start;padding:88px 28px 32px;gap:4px;box-shadow:-8px 0 40px rgba(30,27,46,0.08);transform:translateX(100%);transition:transform 0.35s var(--ease);z-index:105;border-left:1px solid var(--border)}
+nav.menuopen .nl{transform:translateX(0)}
+.nl a:not(.ncta){padding:14px 4px;font-size:16px;border-bottom:1px solid var(--border)}
+.nl .ncta{margin-top:16px;text-align:center}
+.logo-sub{display:none}
+.logo-text{font-size:17px}
 .sg{grid-template-columns:1fr}
 .pgrid{grid-template-columns:repeat(2,1fr)}
 .stg{grid-template-columns:repeat(2,1fr)}
@@ -256,16 +295,150 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 .niche-grid{grid-template-columns:1fr}
 [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}
 }
+
+/* ===== LOADER ===== */
+#loader{position:fixed;inset:0;background:var(--off-white);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.7s ease,visibility 0.7s ease}
+#loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.loader-logo{animation:loaderPulse 1.4s ease-in-out infinite}
+@keyframes loaderPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.loader-ring{position:absolute;width:72px;height:72px;border:2px solid var(--lilac-pale);border-top-color:var(--lilac);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader-text{font-family:var(--fd);font-size:13px;color:var(--soft);letter-spacing:3px;text-transform:uppercase;margin-top:52px;animation:fadeIn 0.6s ease 0.4s both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ===== NAV ENTRANCE ===== */
+body:not(.loaded) nav{transform:translateY(-100%)}
+body.loaded nav{animation:navDown 400ms var(--ease-out) forwards}
+@keyframes navDown{from{transform:translateY(-100%)}to{transform:translateY(0)}}
+nav{transition:box-shadow 200ms var(--ease-out)}
+nav.scrolled{box-shadow:0 4px 28px rgba(30,27,46,0.09)}
+
+/* ===== HERO ENTRANCE — fires after loader ===== */
+body.loaded .ht .ey{animation:fadeUp 400ms var(--ease-out) 100ms both}
+body.loaded .ht h1{animation:fadeUp 450ms var(--ease-out) 180ms both}
+body.loaded .ht p{animation:fadeUp 400ms var(--ease-out) 280ms both}
+body.loaded .ht>div:last-child{animation:fadeUp 400ms var(--ease-out) 360ms both}
+body.loaded .hc1{animation:cardIn 400ms var(--ease-out) 240ms both}
+body.loaded .hc2{animation:cardIn 400ms var(--ease-out) 320ms both}
+body.loaded .hc3{animation:cardIn 400ms var(--ease-out) 400ms both}
+body.loaded .hc4{animation:cardIn 400ms var(--ease-out) 480ms both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes cardIn{from{opacity:0;transform:translateX(8px) scale(0.97)}to{opacity:1;transform:translateX(0) scale(1)}}
+
+/* ===== FLOATING HERO VISUAL ===== */
+.hv{animation:floatY 7s ease-in-out infinite}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* ===== PARTICLES ===== */
+.particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.particle{position:absolute;border-radius:50%;background:var(--lilac);animation:particleDrift var(--dur,9s) var(--del,0s) infinite linear;opacity:0}
+@keyframes particleDrift{0%{transform:translateY(0) translateX(0);opacity:0}15%{opacity:var(--op,0.25)}85%{opacity:var(--op,0.1)}100%{transform:translateY(-110vh) translateX(var(--dx,20px));opacity:0}}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 450ms var(--ease-out),transform 450ms var(--ease-out)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-left{opacity:0;transform:translateX(-18px);transition:opacity 450ms var(--ease-out),transform 450ms var(--ease-out)}
+.reveal-left.visible{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(18px);transition:opacity 450ms var(--ease-out),transform 450ms var(--ease-out)}
+.reveal-right.visible{opacity:1;transform:none}
+.reveal-scale{opacity:0;transform:scale(0.95);transition:opacity 400ms var(--ease-out),transform 400ms var(--ease-out)}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+/* ===== BUTTON RIPPLE ===== */
+.btn,.sbtn,.ncta{overflow:hidden;position:relative}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,0.28);transform:scale(0);animation:rippleOut 0.65s linear forwards;pointer-events:none}
+@keyframes rippleOut{to{transform:scale(4);opacity:0}}
+
+/* ===== FAQ ACCORDION ===== */
+.fqa{overflow:hidden;max-height:0;opacity:0;margin-top:0;transition:max-height 280ms var(--ease-out),opacity 200ms var(--ease-out),margin-top 200ms var(--ease-out)}
+.fq.open .fqa{max-height:300px;opacity:1;margin-top:8px}
+.fqq{cursor:pointer;user-select:none}
+.fqq::after{content:'↓';color:var(--lilac);margin-left:8px;display:inline-block;transition:transform 250ms var(--ease-out);font-size:12px}
+.fq.open .fqq::after{transform:rotate(180deg)}
+
+/* ===== STAT COUNTER GLOW ===== */
+.pn{display:inline-block;transition:text-shadow 250ms ease}
+.pitem.visible .pn{animation:statPop 400ms var(--ease-out) both}
+@keyframes statPop{0%{transform:scale(0.92);opacity:0}100%{transform:scale(1);opacity:1}}
+
+/* ===== PROCESS CONNECTOR LINE ===== */
+.stg{position:relative}
+.stg::after{content:'';position:absolute;top:44px;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,var(--lilac-light) 30%,var(--lilac-light) 70%,transparent);transform:scaleX(0);transform-origin:left;transition:transform 700ms var(--ease-out)}
+.stg.line-visible::after{transform:scaleX(1)}
+
+/* ===== NICHE ICON BOUNCE (subtle, gated to fine pointer) ===== */
+@media(hover:hover) and (pointer:fine){
+.niche-card:hover .niche-icon{animation:bounce 350ms var(--ease-out)}
+}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* ===== Featured-card badge: subtle pulse, then stop ===== */
+.sbdg{animation:badgePulse 3s var(--ease-in-out) 2}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(155,142,196,0.4)}50%{box-shadow:0 0 0 6px rgba(155,142,196,0)}}
+
+/* ===== SHIMMER on hcf (run a few cycles then stop) ===== */
+.hcf{background:linear-gradient(90deg,var(--lilac) 0%,var(--lilac-deep) 40%,var(--lilac) 80%);background-size:200% 100%;animation:shimmer 1.8s var(--ease-in-out) 3}
+
+/* ===== LOGO HOVER =====*/
+.logo-text{transition:color 180ms var(--ease-out)}
+.logo:hover .logo-text{color:var(--lilac)}
+
+/* ===== FOOTER LINKS HOVER ===== */
+.fln a{transition:color 180ms var(--ease-out)}
+.fln a:hover{color:var(--lilac-light)!important}
+
+@media(max-width:768px){
+.stg::after{display:none}
+.hv{animation:none}
+}
+
+/* ===== TOUCH-DEVICE HOVER RESET =====
+   Prevents :hover transforms from sticking on tap (mobile/tablet) */
+@media(hover:none),(pointer:coarse){
+.btn:hover,.sbtn:hover,.ncta:hover,.bp:hover,.bg:hover,.bw:hover,
+.sc:hover,.tc:hover,.niche-card:hover,.syc:hover,.rc:hover,
+.pitem:hover,.wi:hover,.pi:hover,.hc:hover,.ttag:hover,
+.ric:hover,.tarrow:hover,.stn:hover{
+transform:none!important;
+box-shadow:inherit;
+padding-left:0
+}
+}
+
+/* ===== REDUCED MOTION =====
+   Honor user preference for reduced motion; keep instant fades only */
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{
+animation-duration:0.01ms!important;
+animation-iteration-count:1!important;
+transition-duration:0.01ms!important;
+scroll-behavior:auto!important
+}
+.hv,.hcf,.particle,.loader-ring,.loader-logo,.sbdg{animation:none!important}
+}
 </style>
 </head>
 <body>
+
+<!-- PAGE LOADER -->
+<div id="loader">
+  <div style="position:relative;display:flex;align-items:center;justify-content:center;width:60px;height:60px">
+    <div class="loader-ring"></div>
+    <div class="loader-logo">
+      <svg width="44" height="44" viewBox="0 0 84 84" fill="none"><rect width="84" height="84" rx="22" fill="#5C4F82"/><text x="42" y="62" font-family="Georgia,serif" font-size="46" font-style="italic" fill="#FFFFFF" text-anchor="middle" opacity="0.95">WI</text><circle cx="72" cy="14" r="7" fill="#C8BFDF" opacity="0.9"/></svg>
+    </div>
+  </div>
+  <div class="loader-text">Whitney Ops</div>
+</div>
+
 <div class="site">
 
 <nav>
 <a class="logo" onclick="go('home')">
-<svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect width="34" height="34" rx="10" fill="#9B8EC4"/><path d="M9 24L13.5 10h2.2l3 9.5L21.8 10H24l-5.5 14h-2L13 14.5 9.5 24H9z" fill="#fff" opacity="0.95"/><circle cx="27" cy="11" r="2.5" fill="#C8BFDF"/></svg>
+<svg width="38" height="38" viewBox="0 0 84 84" fill="none"><rect width="84" height="84" rx="22" fill="#5C4F82"/><text x="42" y="62" font-family="Georgia,serif" font-size="46" font-style="italic" fill="#FFFFFF" text-anchor="middle" opacity="0.95">WI</text><circle cx="72" cy="14" r="7" fill="#C8BFDF" opacity="0.9"/></svg>
 <div><div class="logo-text">Whitney Ops</div><div class="logo-sub">Operations &amp; growth</div></div>
 </a>
+<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 <div class="nl">
 <a onclick="go('home')" class="active" id="n0">Home</a>
 <a onclick="go('services')" id="n1">Services</a>
@@ -281,16 +454,17 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 
 <div class="hero">
 <div class="ht">
-<div class="ey"><span></span>Operations &amp; Growth Partner</div>
+<div class="ey">Operations &amp; Growth Partner</div>
 <h1>Your business runs.<br>You <em>grow.</em></h1>
-<p>Virtual assistant and operations support for coaches, speakers, founders, and real estate professionals &mdash; flat monthly retainers, no hourly tracking, no surprises. Based in Nairobi, Kenya. Serving clients in the US, UK, Canada, and Australia.</p>
+<p>Executive support and operational partnership for founders, coaches, speakers, and service-based businesses delivered through simple flat monthly retainers with no hourly tracking or hidden surprises. Based in Nairobi. Supporting clients across the world</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
 <span class="btn bp" onclick="go('contact')">Book a free call &rarr;</span>
 <span class="btn bg" onclick="go('services')">View services</span>
 </div>
 </div>
 <div class="hv">
-<div class="hc hc1"><div class="hcl">Inbox &amp; admin</div><div class="hcv">Inbox zero</div><div class="hcs">Managed daily &mdash; nothing missed, nothing buried</div></div>
+<img src="images/whitney-hero.jpg" alt="Whitney Imbuhila" class="hv-photo">
+<div class="hc hc1"><div class="hcl">Inbox &amp; admin</div><div class="hcv">Inbox zero</div><div class="hcs">Managed daily, nothing missed or buried</div></div>
 <div class="hc hc2"><div class="hcl">Content &amp; social</div><div class="hcv">21 posts/week</div><div class="hcs">Consistent visibility without you thinking about it</div><div class="hcb"><div class="hcf" style="width:100%"></div></div></div>
 <div class="hc hc3"><div class="hcl">Lead generation</div><div class="hcv">Pipeline full</div><div class="hcs">Outreach and follow-up while you focus on clients</div><div class="hcb"><div class="hcf" style="width:88%"></div></div></div>
 <div class="hc hc4"><div class="hcl">Time given back</div><div class="hcv">20+ hrs/week</div><div class="hcs">Returned to you for the work that actually grows revenue</div></div>
@@ -300,11 +474,11 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <div class="s sl">
 <div class="sh"><div class="ey">Sound familiar?</div><h2>You're great at what you do. But the business around it is chaos.</h2></div>
 <div class="pl">
-<div class="pi"><div class="pic">&rarr;</div><div class="pit">Your inbox is a disaster &mdash; important emails get buried and leads go cold.</div></div>
-<div class="pi"><div class="pic">&rarr;</div><div class="pit">Content is inconsistent &mdash; you post when you remember, which isn't often enough.</div></div>
+<div class="pi"><div class="pic">&rarr;</div><div class="pit">Your inbox is a disaster, important emails get buried and leads go cold.</div></div>
+<div class="pi"><div class="pic">&rarr;</div><div class="pit">Content is inconsistent, you post when you remember, which isn't often enough.</div></div>
 <div class="pi"><div class="pic">&rarr;</div><div class="pit">Your pipeline dries up every time you get busy with clients.</div></div>
 <div class="pi"><div class="pic">&rarr;</div><div class="pit">You spend evenings on admin instead of growing the business.</div></div>
-<div class="pi"><div class="pic">&rarr;</div><div class="pit">Everything lives in your head &mdash; there's no system backing you up.</div></div>
+<div class="pi"><div class="pic">&rarr;</div><div class="pit">Everything lives in your head, there's no system backing you up.</div></div>
 <div class="pi"><div class="pic">&rarr;</div><div class="pit">You know you need help but aren't sure where to start or what to delegate.</div></div>
 </div>
 <div class="pr"><p>You don't need to do it all yourself.</p><strong>You need someone steady in the background keeping things running while you focus on your clients.</strong></div>
@@ -374,7 +548,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 </div>
 
 </div>
-<div class="cc"><h3>Not sure which plan fits?</h3><p>Book a free call and we'll figure it out together. All plans are flexible &mdash; scope adjusts as your business evolves.</p><span class="btn bp" onclick="go('contact')">Book a discovery call &rarr;</span></div>
+<div class="cc"><h3>Not sure which plan fits?</h3><p>Book a free call and we'll figure it out together. All plans are flexible, scope adjusts as your business evolves.</p><span class="btn bp" onclick="go('contact')">Book a discovery call &rarr;</span></div>
 </div>
 
 <!-- PROOF STATS -->
@@ -382,7 +556,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <div class="sh"><div class="ey" style="color:#C8BFDF">Why Whitney Ops</div><h2>Real numbers. Real work.</h2></div>
 <div class="pgrid">
 <div class="pitem"><div class="pn">20+</div><div class="pd">Hours per week given back to clients</div></div>
-<div class="pitem"><div class="pn">Daily</div><div class="pd">Inbox and pipeline management &mdash; nothing missed</div></div>
+<div class="pitem"><div class="pn">Daily</div><div class="pd">Inbox and pipeline management, nothing missed</div></div>
 <div class="pitem"><div class="pn">6&times;</div><div class="pd">Less than the cost of a local hire in the US or UK</div></div>
 <div class="pitem"><div class="pn">48 hrs</div><div class="pd">From signing to fully onboarded and working</div></div>
 </div>
@@ -391,40 +565,90 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <!-- TESTIMONIALS -->
 <div class="s sa">
 <div class="sh"><div class="ey">Client words</div><h2>What clients say</h2></div>
-<div class="tgrid">
-<div class="tc">
-<div class="tq">&ldquo;</div>
-<div class="tt">Whitney consistently delivers outstanding results as a vital member of our team. Her dependability is unmatched; she meets every deadline while upholding the highest quality standards. What truly distinguishes Whitney is her &ldquo;can do&rdquo; attitude and problem-solving approach. Whitney blends technical skills with genuine care for her work, making her an invaluable team member. Her proactive communication and meticulous attention to detail give me full confidence in assigning her important projects. I recommend Whitney without hesitation.</div>
-<div class="ta">
-<div class="tav">L</div>
-<div>
-<div class="tn">Liz Goodgold</div>
-<div class="tr">Brand &amp; Growth Strategist &middot; Keynote Speaker &middot; Speech Coach</div>
-</div>
-</div>
-</div>
-<div class="tc">
-<div class="tq">&ldquo;</div>
-<div class="tt">Whitney completely transformed how my business operates. My pipeline stays full, content goes out consistently, and I haven't missed a single follow-up since she started. She's not just a VA &mdash; she's the reason my business runs the way it should.</div>
-<div class="ta">
-<div class="tav">R</div>
-<div>
-<div class="tn">Ryan</div>
-<div class="tr">Agency Owner &mdash; Lead Generation &amp; Outreach</div>
-</div>
-</div>
-</div>
+<div class="tcarousel">
+  <div class="ttrack-wrap">
+    <div class="ttrack" id="ttrack">
+
+      <div class="tc">
+        <div class="tq">&ldquo;</div>
+        <div class="tt">Whitney consistently delivers outstanding results as a vital member of our team. Her dependability is unmatched; she meets every deadline while upholding the highest quality standards. What truly distinguishes Whitney is her "can do" attitude and problem-solving approach. Whitney blends technical skills with genuine care for her work, making her an invaluable team member. Her proactive communication and meticulous attention to detail give me full confidence in assigning her important projects. I recommend Whitney without hesitation.</div>
+        <div class="ta">
+          <div class="tav">L</div>
+          <div>
+            <div class="tn">Liz Goodgold</div>
+            <div class="tr">Brand &amp; Growth Strategist &middot; Keynote Speaker &middot; Speech Coach</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="tq">&ldquo;</div>
+        <div class="tt">Whitney completely transformed how my business operates. My pipeline stays full, content goes out consistently, and I haven't missed a single follow-up since she started. She's not just a VA, she's the reason my business runs the way it should.</div>
+        <div class="ta">
+          <div class="tav">R</div>
+          <div>
+            <div class="tr">Agency Owner, Lead Generation &amp; Outreach</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="tq">&ldquo;</div>
+        <div class="tt">Whitney has been a reliable support to our business, particularly with managing our LinkedIn and social media presence. She's consistent, easy to work with, and always willing to adapt and learn as the business evolves. Her communication and professionalism have been appreciated throughout our time working together.</div>
+        <div class="ta">
+          <div class="tav">N</div>
+          <div>
+            <div class="tn">Nigel Dods</div>
+            <div class="tr">Interim CEO, Bluemast</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="tcontrols">
+    <button class="tarrow" id="tprev" aria-label="Previous">&#8592;</button>
+    <div class="tdots" id="tdots"></div>
+    <button class="tarrow" id="tnext" aria-label="Next">&#8594;</button>
+  </div>
 </div>
 </div>
 
+<script>
+(function(){
+  var track = document.getElementById('ttrack');
+  var slides = track ? track.children : [];
+  var dotsWrap = document.getElementById('tdots');
+  var current = 0;
+  function buildDots(){
+    dotsWrap.innerHTML = '';
+    for(var i = 0; i < slides.length; i++){
+      var d = document.createElement('div');
+      d.className = 'tdot' + (i === 0 ? ' active' : '');
+      d.dataset.i = i;
+      d.addEventListener('click', function(){ goTo(+this.dataset.i); });
+      dotsWrap.appendChild(d);
+    }
+  }
+  function goTo(n){
+    current = (n + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    document.querySelectorAll('.tdot').forEach(function(d,i){ d.classList.toggle('active', i === current); });
+  }
+  document.getElementById('tprev').addEventListener('click', function(){ goTo(current - 1); });
+  document.getElementById('tnext').addEventListener('click', function(){ goTo(current + 1); });
+  buildDots();
+})();
+</script>
+
 <!-- WHO THIS IS FOR - NICHES -->
 <div class="s sl">
-<div class="sh"><div class="ey">Who I work with</div><h2>Built for the people who build things</h2><p>Coaches, speakers, founders, and real estate professionals &mdash; brilliant at what they do, running out of hours to do it.</p></div>
+<div class="sh"><div class="ey">Who I work with</div><h2>Built for the people who build things</h2><p>Coaches, speakers, founders, and real estate professionals, brilliant at what they do, running out of hours to do it.</p></div>
 <div class="niche-grid">
 <div class="niche-card">
 <div class="niche-icon">01</div>
 <div class="niche-title">Coaches, Speakers &amp; Authors</div>
-<div class="niche-pain">"I became a coach to help people &mdash; not to spend all day in my inbox."</div>
+<div class="niche-pain">"I became a coach to help people, not to spend all day in my inbox."</div>
 <div class="niche-tags">
 <span class="niche-tag">Inbox management</span><span class="niche-tag">Content creation</span><span class="niche-tag">Client onboarding</span><span class="niche-tag">Launch support</span><span class="niche-tag">Community management</span>
 </div>
@@ -450,12 +674,12 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 
 <!-- PROCESS -->
 <div class="s">
-<div class="sh"><div class="ey">Process</div><h2>From hello to running &mdash; in 48 hours</h2></div>
+<div class="sh"><div class="ey">Process</div><h2>From hello to running in 48 hours</h2></div>
 <div class="stg">
 <div class="sti"><div class="stn">1</div><div class="stt">Free discovery call</div><div class="std">20 minutes. We talk about your business, what's heavy, and whether we're a good fit.</div></div>
 <div class="sti"><div class="stn">2</div><div class="stt">Sign &amp; pay</div><div class="std">Choose a plan, sign the agreement, pay the first month. No minimum contract. Cancel anytime.</div></div>
 <div class="sti"><div class="stn">3</div><div class="stt">Onboarding call</div><div class="std">30 minutes together. Confirm priorities, agree communication style, get access to your tools.</div></div>
-<div class="sti"><div class="stn">4</div><div class="stt">Work begins</div><div class="std">Within 48 hours I'm in your inbox, your calendar, your systems &mdash; and you're free to focus.</div></div>
+<div class="sti"><div class="stn">4</div><div class="stt">Work begins</div><div class="std">Within 48 hours I'm in your inbox, your calendar, your systems, and you're free to focus.</div></div>
 </div>
 </div>
 
@@ -525,7 +749,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <div class="sftr"><span class="sbtn">View details &rarr;</span></div>
 </div>
 </div>
-<div class="cc"><h3>Need something custom?</h3><p>Every business is different. If your needs sit across multiple areas, we'll build a scope that works &mdash; without overcomplicating it.</p><span class="btn bp" onclick="go('contact')">Book a discovery call &rarr;</span></div>
+<div class="cc"><h3>Need something custom?</h3><p>Every business is different. If your needs sit across multiple areas, we'll build a scope that works without overcomplicating it.</p><span class="btn bp" onclick="go('contact')">Book a discovery call &rarr;</span></div>
 </div>
 
 <div class="s sl"><div class="sh"><h2 style="font-size:28px">Not sure which plan is right?</h2><p>Book a free call and we'll figure it out together. Most clients start with Relief or Growth and adjust from there.</p></div><div style="text-align:center"><span class="btn bp" onclick="go('contact')">Let's talk &rarr;</span></div></div>
@@ -538,7 +762,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <div class="fq"><div class="fqq">What tools do you work with?</div><div class="fqa">Smartlead, LinkedIn, HubSpot, Asana, Notion, Monday, Zoho, Mailchimp, Canva, Google Workspace, and more. If you use it, I can likely work in it.</div></div>
 <div class="fq"><div class="fqq">Can I change plans as my needs grow?</div><div class="fqa">Absolutely. Your support adjusts as your business evolves. We review what's working and update scope as needed.</div></div>
 <div class="fq"><div class="fqq">How do I pay?</div><div class="fqa">All invoices are issued monthly via Payoneer. Payment is due within 7 days of the invoice date. All amounts are in USD.</div></div>
-<div class="fq"><div class="fqq">Do you work with clients outside Kenya?</div><div class="fqa">Yes. I work with clients in the US, UK, Canada, Australia, and beyond. Time zones have never been an issue &mdash; your business runs smoothly regardless of where you are.</div></div>
+<div class="fq"><div class="fqq">Do you work with clients outside Kenya?</div><div class="fqa">Yes. I work with clients in the US, UK, Canada, Australia, and beyond. Time zones have never been an issue, your business runs smoothly regardless of where you are.</div></div>
 </div>
 </div>
 </div>
@@ -548,7 +772,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <a class="pkb" onclick="go('services')">&larr; Back to services</a>
 <div class="pkh">
 <h1>Relief Plan</h1>
-<div class="desc">"Take the weight off my desk" &mdash; for business owners drowning in day-to-day admin, inbox chaos, and scheduling.</div>
+<div class="desc">"Take the weight off my desk" for business owners drowning in day-to-day admin, inbox chaos, and scheduling.</div>
 <div class="price-big" style="font-family:var(--fd);font-size:52px;font-weight:600;color:var(--plum);line-height:1;margin:20px 0 4px">$500</div>
 <div style="font-size:15px;color:var(--soft)">/month flat retainer</div>
 <div style="font-size:13px;color:var(--success);font-weight:500;margin-top:6px">Local hire equivalent: $3,000–$5,000/month</div>
@@ -566,7 +790,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <a class="pkb" onclick="go('services')">&larr; Back to services</a>
 <div class="pkh">
 <h1>Growth Plan</h1>
-<div class="desc">"Run my ops so I can make money" &mdash; for business owners who need the back end handled AND the revenue engine running.</div>
+<div class="desc">Built for business owners who need both operational support and help maintaining consistent marketing and client communication.</div>
 <div class="price-big" style="font-family:var(--fd);font-size:52px;font-weight:600;color:var(--plum);line-height:1;margin:20px 0 4px">$650</div>
 <div style="font-size:15px;color:var(--soft)">/month flat retainer</div>
 <div style="font-size:13px;color:var(--success);font-weight:500;margin-top:6px">Local hire equivalent: $3,500–$5,500/month</div>
@@ -576,7 +800,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <div class="pkdi"><h3>Lead generation &amp; outreach support</h3><p>Your outreach sequences managed and monitored. Prospects researched, lists built, campaigns tracked. Your pipeline stays full while you focus on delivery.</p></div>
 <div class="pkdi"><h3>Email marketing &amp; newsletters</h3><p>Sequences and campaigns designed, written, and sent. Your email list stays engaged between launches and doesn't go cold.</p></div>
 <div class="pkdi"><h3>Pipeline tracking &amp; follow-up</h3><p>No lead goes cold. Follow-ups happen on time, every time. Every interested prospect gets a response before they lose interest.</p></div>
-<div class="pkdi"><h3>Client onboarding coordination</h3><p>New clients get a smooth, professional welcome. Questionnaires sent, access granted, onboarding calls booked &mdash; all handled.</p></div>
+<div class="pkdi"><h3>Client onboarding coordination</h3><p>New clients get a smooth, professional welcome. Questionnaires sent, access granted, onboarding calls booked, all handled.</p></div>
 <div class="pkdi"><h3>Launch &amp; event support</h3><p>Coordinating a programme launch, webinar, or event? The logistics are managed so you can focus on showing up and delivering.</p></div>
 <div style="text-align:center;padding-top:32px"><span class="btn bp" onclick="go('contact')">Get started &rarr;</span></div>
 </div></div></div>
@@ -585,17 +809,17 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <a class="pkb" onclick="go('services')">&larr; Back to services</a>
 <div class="pkh">
 <h1>Operator Plan</h1>
-<div class="desc">"Be my right hand. Own it." &mdash; for founders who want one person running the full operation so they can focus entirely on growth.</div>
+<div class="desc">"Be my right hand. Own it." For founders who want one person running the full operation so they can focus entirely on growth.</div>
 <div class="price-big" style="font-family:var(--fd);font-size:52px;font-weight:600;color:var(--plum);line-height:1;margin:20px 0 4px">$900</div>
 <div style="font-size:15px;color:var(--soft)">/month flat retainer</div>
 <div style="font-size:13px;color:var(--success);font-weight:500;margin-top:6px">Local hire equivalent: $5,000–$7,000/month</div>
 </div>
 <div class="pkinc">Includes everything in the Relief and Growth Plans, plus:</div>
-<div class="pkdi"><h3>Full outreach campaign management</h3><p>End-to-end management of cold email and LinkedIn campaigns. Sequences written, sent, monitored, and optimised. You review replies &mdash; everything else is handled.</p></div>
+<div class="pkdi"><h3>Full outreach campaign management</h3><p>End-to-end management of cold email and LinkedIn campaigns. Sequences sent, monitored, and optimized. You review replies, everything else is handled.</p></div>
 <div class="pkdi"><h3>SOP creation &amp; documentation</h3><p>Your processes get documented into clear, repeatable systems. Nothing depends on memory. Essential for scaling.</p></div>
 <div class="pkdi"><h3>Team &amp; vendor coordination</h3><p>Freelancers, contractors, and suppliers managed. Briefs sent, deliverables tracked, follow-ups handled. You stay out of the coordination weeds.</p></div>
 <div class="pkdi"><h3>Business reporting &amp; dashboards</h3><p>Clear weekly and monthly reporting on pipeline, content performance, and key metrics. You always know where things stand.</p></div>
-<div class="pkdi"><h3>Monthly strategy review call</h3><p>30 minutes every month to review what's working, what needs adjusting, and where to focus next. One conversation keeps everything aligned.</p></div>
+<div class="pkdi"><h3>Monthly strategy review call</h3><p>1 hour every week to review what's working, what needs adjusting, and where to focus next. One conversation keeps everything aligned.</p></div>
 <div style="text-align:center;padding-top:32px"><span class="btn bp" onclick="go('contact')">Get started &rarr;</span></div>
 </div></div></div>
 
@@ -603,33 +827,26 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <div id="about" class="pg">
 <div class="abh">
 <div class="abi">
-  <!-- Drop your photo as images/whitney-profile.jpg to replace this placeholder -->
-  <div class="abi-placeholder">
-    <div class="abit">Your photo here</div>
-  </div>
+  <img src="images/whitney-profile.jpg" alt="Whitney Imbuhila" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:20px;display:block;">
 </div>
 <div class="abt">
 <h1>Hi, I'm Whitney.</h1>
-<div class="tag">The calm behind the chaos.</div>
-<p>I studied hospitality management &mdash; an industry built on anticipating what people need before they ask, managing a hundred moving parts at once, and making sure everyone feels taken care of. I didn't know it at the time, but that training would become the foundation of everything I do now.</p>
-<p>In 2022, someone close to me introduced me to virtual assistance, and something clicked. The skills I'd built &mdash; staying organised under pressure, keeping things running behind the scenes, paying attention to the details other people miss &mdash; were exactly what business owners needed.</p>
-<p>I started, landed my first client, and haven't stopped growing since. Today I support coaches, speakers, founders, and real estate professionals across operations, content, lead generation, and full business support &mdash; from Nairobi, Kenya, serving clients globally.</p>
+<div class="tag">The calm behind the chaos.<br>The person behind Virtual Services KE.</div>
+<p>I've always been someone who genuinely enjoys helping things run smoothly. Whether it's organizing workflows, supporting clients behind the scenes, managing communication, or bringing structure to a busy business, I love being the reliable person people can count on.</p>
+<p>My journey started in social media management and digital support, but over time, I realized my real passion was helping business owners feel less overwhelmed and more supported in the day-to-day running of their businesses. Since then, I've worked with founders, consultants, and growing brands across different areas of business support, from executive assistance and systems management to content coordination, client communication, and online operations.</p>
+<p>What matters most to me is creating working relationships that feel human, dependable, and long-term. I care deeply about doing great work, communicating well, and making life easier for the people I work with.</p>
+<p>I'm based in Nairobi and work remotely with clients around the world. Outside of work, I enjoy cooking, traveling, learning new skills, and finding creative ways to continue growing both personally and professionally.</p>
+<p>For me, this work has never just been about checking tasks off a list, it's about helping people build businesses and lives that feel lighter, more organized, and more sustainable.</p>
 </div>
 </div>
 
 <div class="s sl">
 <div class="sh"><div class="ey">The mission</div><h2>Why I'm building this</h2></div>
-<div style="max-width:600px;margin:0 auto;text-align:center">
-<p style="font-size:16px;color:#5C4F82;line-height:1.9;margin-bottom:16px;font-family:var(--fd);font-style:italic">I'm building Whitney Ops because I believe in financial freedom &mdash; for myself, for my family, and eventually for the team I'll build around this.</p>
-<p style="font-size:15px;color:#6B6580;line-height:1.8">Every client I serve is a step toward something bigger. What starts as one person supporting your business will grow into a full team &mdash; but the standard of care, attention, and reliability will always stay the same.</p>
-</div>
-</div>
-
-<div class="s">
-<div class="sh"><div class="ey">Beyond work</div><h2>A little more about me</h2></div>
-<div style="max-width:600px;margin:0 auto;text-align:center">
-<p style="font-size:15px;color:#6B6580;line-height:1.9">When I'm not working, you'll find me trying a new recipe in the kitchen, reading, listening to music, exploring new places, or spending time with my church community. I'm also passionate about building community &mdash; I believe we grow better when we grow together.</p>
-<p style="font-size:15px;color:#6B6580;line-height:1.9;margin-top:12px">I'm based in Nairobi, Kenya, and I work with clients all over the world.</p>
+<div style="max-width:720px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:15px;color:#6B6580;line-height:1.85">I'm building this because I know how overwhelming running a business can feel when you're trying to do everything on your own. So many founders and business owners are brilliant at what they do, but they're stretched thin managing admin, communication, content, scheduling, operations, and the endless behind-the-scenes tasks that keep a business running. I wanted to create a service that genuinely helps lighten that load.</p>
+<p style="font-size:15px;color:#6B6580;line-height:1.85">What started as offering virtual support grew into something much more meaningful for me, becoming a trusted support partner that helps businesses operate more smoothly while giving founders more time, clarity, and peace of mind.</p>
+<p style="font-size:15px;color:#6B6580;line-height:1.85">I'm also building this because I believe remote work has the power to create opportunities beyond borders. From Nairobi, I've been able to work with incredible people around the world, grow professionally, and build something of my own with purpose and intention.</p>
+<p style="font-size:15px;color:#6B6580;line-height:1.85">At the heart of it all, I'm building this to create impact, for the clients I support, the businesses I help behind the scenes, and the future I'm working toward for myself.</p>
 </div>
 </div>
 
@@ -637,8 +854,8 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <div class="sh"><div class="ey">Working style</div><h2>What it's like working with me</h2></div>
 <div class="syg">
 <div class="syc"><h3>Calm, steady, reliable</h3><p>Things get done when they're supposed to. Follow-ups don't disappear. You're not constantly checking in wondering what happened.</p></div>
-<div class="syc"><h3>Detail-aware, big-picture minded</h3><p>I handle details carefully but never lose sight of what matters. Small things don't turn into big distractions.</p></div>
-<div class="syc"><h3>Proactive, not reactive</h3><p>I don't wait to be told. If something needs attention, I flag it. If something's about to fall through, I catch it first.</p></div>
+<div class="syc"><h3>Great Partnership</h3><p>Beyond tasks and systems, I care about creating a supportive experience. I want my clients to feel less overwhelmed, more supported, and confident knowing they have someone dependable in their corner.</p></div>
+<div class="syc"><h3>Clear Communication</h3><p>I value professionalism, transparency, and consistency. You can expect timely communication, reliability, and a collaborative working relationship built on trust.</p></div>
 <div class="syc"><h3>Flexible as things evolve</h3><p>As your business grows or changes, support adjusts with it. No rigid systems or unnecessary complexity.</p></div>
 </div>
 </div>
@@ -647,19 +864,19 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <div class="sh"><div class="ey">Toolkit</div><h2>Tools I work with daily</h2></div>
 <div class="tw">
 <span class="ttag">Smartlead</span><span class="ttag">Dripify</span><span class="ttag">LinkedIn</span><span class="ttag">HubSpot</span><span class="ttag">Asana</span><span class="ttag">Notion</span><span class="ttag">Monday</span><span class="ttag">Zoho</span><span class="ttag">Mailchimp</span><span class="ttag">Canva</span><span class="ttag">Loomly</span><span class="ttag">Google Workspace</span><span class="ttag">WordPress</span><span class="ttag">Wix</span><span class="ttag">Kajabi</span><span class="ttag">Instagram</span><span class="ttag">Facebook</span><span class="ttag">Discord</span>
-<p style="font-size:13px;color:#9994A8;margin-top:16px">If you use something not on this list &mdash; I learn new tools quickly.</p>
+<p style="font-size:13px;color:#9994A8;margin-top:16px">If you use something not on this list, I learn new tools quickly.</p>
 </div>
 </div>
 
 <div class="s sa" style="text-align:center">
-<span class="btn bp" onclick="go('contact')">Let's work together &rarr;</span>
+<a class="btn bp" href="https://calendly.com/omindewhitney/30min" target="_blank" rel="noopener">Let's work together &rarr;</a>
 </div>
 </div>
 
 <!-- ========== RESOURCES ========== -->
 <div id="resources" class="pg">
 <div class="s">
-<div class="sh"><div class="ey">Free stuff</div><h2>Free resources</h2><p>Practical tools to help you get organised, stay consistent, and take things off your plate &mdash; before you ever work with me.</p></div>
+<div class="sh"><div class="ey">Free stuff</div><h2>Free resources</h2><p>Practical tools to help you get organised, stay consistent, and take things off your plate before you ever work with me.</p></div>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto">
 
 <div class="rc">
@@ -694,7 +911,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <div class="rc">
 <div class="ric"><img src="images/resources/quiz-thumb.svg" alt=""></div>
 <h3>Is it time to hire a VA?</h3>
-<p>A simple scorecard that helps you decide if you're ready for support &mdash; and what kind you need most.</p>
+<p>A simple scorecard that helps you decide if you're ready for support, and what kind you need most.</p>
 <a class="btn bp" href="#" style="font-size:12px;padding:10px 20px;display:inline-flex">Take the quiz</a>
 </div>
 
@@ -718,20 +935,17 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 <div class="ccard">
 <h2>Book a call</h2>
 <p>Choose a time that works for you. The call is 20 minutes and completely free.</p>
-<!-- CALENDLY: Replace the div below with your Calendly embed snippet -->
-<!-- Option A (inline embed): paste the Calendly inline widget code here -->
-<!-- Option B (simple link): use the button below instead -->
-<div class="calp">
-  <span style="font-size:13px;color:var(--soft);font-style:normal;">Calendly booking will appear here.</span>
-  <span style="font-size:12px;color:var(--soft);font-style:normal;">Add your Calendly URL to activate this widget.</span>
-  <!-- Uncomment and update the line below once you have your Calendly URL:
-  <a class="btn bp" href="https://calendly.com/YOUR-LINK" target="_blank" rel="noopener">Pick a time →</a>
-  -->
+<div id="calendly-inline" class="calendly-inline-widget" data-url="https://calendly.com/omindewhitney/30min?hide_gdpr_banner=1&primary_color=9B8EC4" style="min-width:280px;height:660px;"></div>
+<div id="calendly-button" style="display:none;text-align:center;padding:32px 0;">
+  <a class="btn bp" href="https://calendly.com/omindewhitney/30min" target="_blank" rel="noopener">Pick a time &rarr;</a>
 </div>
 </div>
 <div>
-<div class="ccard" style="margin-bottom:24px"><h2>Get the free checklist</h2><p>The 5-task delegation checklist &mdash; know exactly what to hand off first.</p><input class="fi" type="email" placeholder="Your email address"><span class="btn bp" style="width:100%;text-align:center;display:block;font-size:13px">Send me the checklist &rarr;</span></div>
+<div class="ccard" style="margin-bottom:24px"><h2>Get the free checklist</h2><p>The 5-task delegation checklist, know exactly what to hand off first.</p><input class="fi" type="email" placeholder="Your email address"><span class="btn bp" style="width:100%;text-align:center;display:block;font-size:13px">Send me the checklist &rarr;</span></div>
 <div style="padding:0 4px">
+<div style="border-radius:16px;overflow:hidden;margin-bottom:20px;height:200px;">
+  <img src="images/whitney-contact.png" alt="Whitney Imbuhila" style="width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;">
+</div>
 <h2 style="font-family:var(--fd);font-size:22px;margin-bottom:20px">Get in touch directly</h2>
 <div class="ii">
   <div class="iic">&#9993;</div>
@@ -751,7 +965,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
   <div class="iic">&#9678;</div>
   <div class="iit">
     <strong>Location</strong>
-    Nairobi, Kenya &mdash; working globally
+    Nairobi, Kenya. Working globally
   </div>
 </div>
 </div>
@@ -773,14 +987,310 @@ footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 8%;text-a
 </div>
 
 <script>
-function go(id){
-document.querySelectorAll('.pg').forEach(function(p){p.classList.remove('active')});
-document.querySelectorAll('.nl a:not(.ncta)').forEach(function(a){a.classList.remove('active')});
-var m={home:'n0',services:'n1',about:'n2',resources:'n3',contact:'n4',pk1:'n1',pk2:'n1',pk3:'n1'};
-var e=document.getElementById(id);if(e)e.classList.add('active');
-if(m[id]){var n=document.getElementById(m[id]);if(n)n.classList.add('active')}
-window.scrollTo({top:0,behavior:'smooth'});
+/* ============================================================
+   WHITNEY OPS — ANIMATION ENGINE
+   ============================================================ */
+
+/* ----- PAGE LOADER ----- */
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    document.getElementById('loader').classList.add('done');
+    document.body.classList.add('loaded');
+    initParticles();
+  }, 1100);
+});
+
+/* ----- NAV SCROLL SHADOW ----- */
+window.addEventListener('scroll', function () {
+  document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 30);
+}, { passive: true });
+
+/* ----- INTERSECTION OBSERVER ----- */
+var revealObserver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+
+var lineObserver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('line-visible');
+      lineObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+
+function applyRevealClasses() {
+  /* Section headers */
+  document.querySelectorAll('.sh').forEach(function (el) {
+    el.classList.add('reveal');
+  });
+  /* Pain points — staggered (60ms/item, cap 360ms) */
+  document.querySelectorAll('.pi').forEach(function (el, i) {
+    el.classList.add('reveal-left');
+    el.style.transitionDelay = Math.min(i * 0.06, 0.36) + 's';
+  });
+  /* Service cards — staggered (70ms/item, cap 350ms) */
+  document.querySelectorAll('.sg .sc').forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = Math.min(i * 0.07, 0.35) + 's';
+  });
+  /* Stat items — scale */
+  document.querySelectorAll('.pitem').forEach(function (el, i) {
+    el.classList.add('reveal-scale');
+    el.style.transitionDelay = Math.min(i * 0.06, 0.3) + 's';
+  });
+  /* Testimonials — alternating sides */
+  document.querySelectorAll('.tc').forEach(function (el, i) {
+    el.classList.add(i % 2 === 0 ? 'reveal-left' : 'reveal-right');
+    el.style.transitionDelay = Math.min(i * 0.08, 0.32) + 's';
+  });
+  /* Niche cards */
+  document.querySelectorAll('.niche-card').forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = Math.min(i * 0.07, 0.35) + 's';
+  });
+  /* Process steps */
+  document.querySelectorAll('.sti').forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = Math.min(i * 0.08, 0.4) + 's';
+  });
+  /* Process connector line */
+  document.querySelectorAll('.stg').forEach(function (el) {
+    lineObserver.observe(el);
+  });
+  /* Working-style cards */
+  document.querySelectorAll('.syc').forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = Math.min(i * 0.07, 0.35) + 's';
+  });
+  /* Resource cards */
+  document.querySelectorAll('.rc').forEach(function (el, i) {
+    el.classList.add('reveal-scale');
+    el.style.transitionDelay = Math.min(i * 0.06, 0.3) + 's';
+  });
+  /* FAQ items */
+  document.querySelectorAll('.fq').forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = Math.min(i * 0.05, 0.3) + 's';
+  });
+  /* Package detail sections */
+  document.querySelectorAll('.pkdi').forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = Math.min(i * 0.06, 0.36) + 's';
+  });
+  /* Contact / info items */
+  document.querySelectorAll('.ii').forEach(function (el, i) {
+    el.classList.add('reveal-left');
+    el.style.transitionDelay = Math.min(i * 0.07, 0.21) + 's';
+  });
+  /* Tool tags */
+  document.querySelectorAll('.ttag').forEach(function (el, i) {
+    el.classList.add('reveal-scale');
+    el.style.transitionDelay = Math.min(i * 0.03, 0.36) + 's';
+  });
+  /* Custom / promo blocks */
+  document.querySelectorAll('.cc, .pr').forEach(function (el) {
+    el.classList.add('reveal');
+  });
+  /* About text paragraphs */
+  document.querySelectorAll('.abt p, .abt h1, .abt .tag').forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (i * 0.1) + 's';
+  });
+  /* About image */
+  document.querySelectorAll('.abi').forEach(function (el) {
+    el.classList.add('reveal-left');
+  });
 }
+
+function observeAll() {
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function (el) {
+    revealObserver.observe(el);
+  });
+}
+
+function reObserve() {
+  /* Re-trigger reveals when switching pages */
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function (el) {
+    el.classList.remove('visible');
+    revealObserver.observe(el);
+  });
+}
+
+/* ----- COUNTER ANIMATION ----- */
+function countUp(el, target, suffix, prefix) {
+  prefix = prefix || '';
+  var start = performance.now();
+  var duration = 1800;
+  function tick(now) {
+    var p = Math.min((now - start) / duration, 1);
+    var ease = 1 - Math.pow(1 - p, 3);
+    var val = Math.round(ease * target);
+    el.textContent = prefix + val + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+function initCounters() {
+  var defs = [
+    { sel: '.pgrid .pitem:nth-child(1) .pn', target: 20, suffix: '+' },
+    { sel: '.pgrid .pitem:nth-child(3) .pn', target: 6,  suffix: '×' }
+  ];
+  defs.forEach(function (d) {
+    var el = document.querySelector(d.sel);
+    if (!el) return;
+    var orig = el.textContent;
+    var obs = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        countUp(el, d.target, d.suffix);
+        obs.unobserve(el);
+      }
+    }, { threshold: 0.6 });
+    obs.observe(el);
+  });
+}
+
+/* ----- FAQ ACCORDION ----- */
+function initFAQ() {
+  document.querySelectorAll('.fqq').forEach(function (q) {
+    q.addEventListener('click', function () {
+      var fq = this.closest('.fq');
+      var isOpen = fq.classList.contains('open');
+      document.querySelectorAll('.fq.open').forEach(function (el) { el.classList.remove('open'); });
+      if (!isOpen) fq.classList.add('open');
+    });
+  });
+}
+
+/* ----- BUTTON RIPPLE ----- */
+function initRipple() {
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.btn, .sbtn');
+    if (!btn) return;
+    var r = document.createElement('span');
+    r.className = 'ripple';
+    var rect = btn.getBoundingClientRect();
+    var size = Math.max(rect.width, rect.height) * 2.2;
+    r.style.cssText = [
+      'width:' + size + 'px',
+      'height:' + size + 'px',
+      'left:' + (e.clientX - rect.left - size / 2) + 'px',
+      'top:' + (e.clientY - rect.top - size / 2) + 'px'
+    ].join(';');
+    btn.appendChild(r);
+    setTimeout(function () { r.remove(); }, 700);
+  });
+}
+
+/* ----- FLOATING PARTICLES in HERO ----- */
+function initParticles() {
+  var hero = document.querySelector('.hero');
+  if (!hero || hero.querySelector('.particles')) return;
+  var wrap = document.createElement('div');
+  wrap.className = 'particles';
+  hero.style.position = 'relative';
+  hero.insertBefore(wrap, hero.firstChild);
+  for (var i = 0; i < 18; i++) {
+    var p = document.createElement('div');
+    p.className = 'particle';
+    var size = 2 + Math.random() * 3.5;
+    p.style.cssText = [
+      'left:' + (Math.random() * 100) + '%',
+      'top:' + (60 + Math.random() * 40) + '%',
+      'width:' + size + 'px',
+      'height:' + size + 'px',
+      '--dur:' + (7 + Math.random() * 9) + 's',
+      '--del:' + (Math.random() * 7) + 's',
+      '--dx:' + ((-30) + Math.random() * 60) + 'px',
+      '--op:' + (0.12 + Math.random() * 0.22)
+    ].join(';');
+    wrap.appendChild(p);
+  }
+}
+
+/* ----- TYPING CURSOR on hero h1 ----- */
+function initTypingCursor() {
+  var h1 = document.querySelector('#home .ht h1');
+  if (!h1) return;
+  var cursor = document.createElement('span');
+  cursor.style.cssText = 'display:inline-block;width:2px;height:0.85em;background:var(--lilac);margin-left:4px;vertical-align:middle;animation:blink 1.1s step-end infinite;border-radius:1px';
+  var style = document.createElement('style');
+  style.textContent = '@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}';
+  document.head.appendChild(style);
+  h1.appendChild(cursor);
+  /* Remove cursor after 4s */
+  setTimeout(function () {
+    cursor.style.transition = 'opacity 0.4s';
+    cursor.style.opacity = '0';
+    setTimeout(function () { cursor.remove(); }, 500);
+  }, 4000);
+}
+
+/* ----- SMOOTH CARD TILT on hover ----- */
+function initTilt() {
+  document.querySelectorAll('.sc, .tc, .niche-card, .syc').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var r = card.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = 'translateY(-6px) rotateX(' + (-y * 5) + 'deg) rotateY(' + (x * 5) + 'deg)';
+      card.style.transition = 'transform 0.1s ease';
+    });
+    card.addEventListener('mouseleave', function () {
+      card.style.transform = '';
+      card.style.transition = 'transform 0.5s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease)';
+    });
+  });
+}
+
+/* ----- PAGE NAVIGATION ----- */
+function go(id) {
+  document.querySelectorAll('.pg').forEach(function (p) { p.classList.remove('active'); });
+  document.querySelectorAll('.nl a:not(.ncta)').forEach(function (a) { a.classList.remove('active'); });
+  var m = { home:'n0', services:'n1', about:'n2', resources:'n3', contact:'n4', pk1:'n1', pk2:'n1', pk3:'n1' };
+  var e = document.getElementById(id);
+  if (e) e.classList.add('active');
+  if (m[id]) { var n = document.getElementById(m[id]); if (n) n.classList.add('active'); }
+  closeMenu();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  /* Re-trigger scroll reveals on the newly visible page */
+  setTimeout(reObserve, 120);
+}
+
+/* ----- MOBILE MENU ----- */
+function toggleMenu() {
+  var nav = document.querySelector('nav');
+  var btn = document.querySelector('.nav-toggle');
+  var open = nav.classList.toggle('menuopen');
+  if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function closeMenu() {
+  var nav = document.querySelector('nav');
+  if (!nav || !nav.classList.contains('menuopen')) return;
+  nav.classList.remove('menuopen');
+  var btn = document.querySelector('.nav-toggle');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+/* ----- INIT ----- */
+document.addEventListener('DOMContentLoaded', function () {
+  applyRevealClasses();
+  observeAll();
+  initCounters();
+  initFAQ();
+  initRipple();
+  initTilt();
+  setTimeout(initTypingCursor, 1600);
+});
 </script>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

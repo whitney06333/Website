@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 110" fill="none">
+  <!-- Concept D: Signature-style — flowing script-feel, inspired by her handwritten signature -->
+  <!-- Large flowing italic W -->
+  <text x="8" y="82" font-family="Georgia,serif" font-size="80" font-style="italic" fill="#5C4F82" opacity="0.95">W</text>
+  <!-- Overlapping I in lilac, pushed left to nest into W -->
+  <text x="148" y="82" font-family="Georgia,serif" font-size="80" font-style="italic" fill="#9B8EC4" opacity="0.85">i</text>
+  <!-- Swooping underline flourish -->
+  <path d="M 8 92 Q 80 108 160 96 Q 200 90 230 94" stroke="#9B8EC4" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <!-- Sub-label -->
+  <text x="8" y="108" font-family="Arial,sans-serif" font-size="9.5" fill="#9994A8" letter-spacing="3">VIRTUAL OPS · WHITNEY IMBUHILA</text>
+</svg>
