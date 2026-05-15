@@ -234,7 +234,9 @@ nav.menuopen .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45
 .rc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(155,142,196,0.12);border-color:var(--lilac-light)}
 .ric{width:56px;height:56px;background:var(--lilac-pale);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--lilac);font-size:22px;transition:background-color 200ms var(--ease-out),color 200ms var(--ease-out)}
 .rc:hover .ric{background:var(--lilac);color:var(--white)}
-.ric img{width:28px;height:28px;display:block}
+.ric img{width:28px;height:28px;display:block;transition:filter 200ms var(--ease-out)}
+/* Flip the external SVG icon to white on hover (its strokes/fills are hardcoded lilac, so `color:white` on the parent can't reach them). */
+.rc:hover .ric img{filter:brightness(0) invert(1)}
 .rc h3{font-family:var(--fd);font-size:20px;color:var(--dark);margin-bottom:8px}
 .rc p{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:20px}
 
