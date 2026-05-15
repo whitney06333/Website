@@ -1,5 +1,6 @@
 .claude/
 old website images/
+images/_originals_backup/
 .DS_Store
 Thumbs.db
 *.log
